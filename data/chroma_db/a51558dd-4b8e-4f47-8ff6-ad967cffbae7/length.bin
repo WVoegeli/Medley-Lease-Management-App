@@ -1,15 +1,1 @@
-RECOVERY STRUCTURE / CAM / NNN: Minnie Olivia Pizzeria
-
-Tenant: Minnie Olivia Pizzeria
-Suite: 6120
-
-OPERATING EXPENSE RECOVERY:
-- Recovery Type: Flat Rate NNN
-- CAM (Year 1): $17.00/SF per year
-- CAM Increases: 3% annually
-- Estimated Taxes: $2.25/SF per year
-- Estimated Insurance: $0.75/SF per year
-
-TOTAL ESTIMATED RECOVERIES:
-- Total Recovery PSF: $20.00/SF per year
-- Total Annual Recovery: $47,
+invalid type: string "TENANT IMPROVEMENT ALLOWANCE: Minnie Olivia Pizzeria\n\nTenant: Minnie Olivia Pizzeria\nSuite: 6120\nSquare Footage: 2,366 SF\n\nTI ALLOWANCE DETAILS:\n- TI Per Square Foot: $8.00\n- Total TI Allowance: $18,928\n- Notes: Standard buildout allowance\n\nThis TI allowance is provided by the Landlord to help Minnie Olivia Pizzeria build out their space.\n", expected f64ooleanÿÿÿÿ
