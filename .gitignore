@@ -26,7 +26,8 @@ build/
 # Windows artifacts
 nul
 
-# Database (optional - uncomment to exclude)
+# Database - included for Streamlit Cloud deployment
+# To exclude locally, uncomment the line below:
 # data/chroma_db/
 
 # OS
