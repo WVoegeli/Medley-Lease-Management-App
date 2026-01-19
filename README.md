@@ -9,6 +9,19 @@ Enterprise-grade RAG (Retrieval-Augmented Generation) system for commercial leas
 
 ---
 
+## 🎯 Try It Now
+
+**Want to test the app?** Choose your preferred option:
+
+| Method | Time | Audience | Link |
+|--------|------|----------|------|
+| 🌐 **Live Demo** | 0 min | Everyone | [Contact for Streamlit Cloud URL] |
+| ⚡ **Quick Test** | 2 min | Technical users | [QUICKTEST.md](QUICKTEST.md) |
+| 🎥 **Full Demo** | 12 min | Presentations | [DEMO.md](DEMO.md) |
+| 🚀 **Production Setup** | 5 min | Developers | See Quick Start below |
+
+---
+
 ## ✨ Features
 
 - **🔍 Intelligent Document Analysis** - Parse DOCX lease documents with NLP-powered extraction
