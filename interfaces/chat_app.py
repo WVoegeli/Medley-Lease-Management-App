@@ -199,9 +199,6 @@ def render_chat():
 
     # Main chat area
     with chat_col:
-        # Add scrollable wrapper with explicit ID for CSS targeting
-        st.markdown('<div id="chat-messages-wrapper">', unsafe_allow_html=True)
-
         chat_container = st.container()
 
         with chat_container:
@@ -216,8 +213,6 @@ def render_chat():
                 avatar = "👤" if message["role"] == "user" else "🤖"
                 with st.chat_message(message["role"], avatar=avatar):
                     st.markdown(message["content"])
-
-        st.markdown('</div>', unsafe_allow_html=True)
 
         # Handle pending message from example buttons
         if "pending_message" in st.session_state:
@@ -551,36 +546,27 @@ def main():
         justify-content: center !important;
     }
 
-    /* CRITICAL: Chat messages wrapper - enforce fixed height */
-    #chat-messages-wrapper {
-        max-height: 500px !important;
-        height: 500px !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        display: block !important;
-        margin-bottom: 1rem !important;
-        padding-right: 0.5rem !important;
-        border: 1px solid #333;
-        border-radius: 0.5rem;
-        padding: 1rem;
+    /* Simpler approach: Limit the entire main content area */
+    .main .block-container {
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
     }
 
-    /* Scrollbar styling for chat wrapper */
-    #chat-messages-wrapper::-webkit-scrollbar {
-        width: 8px;
+    /* Style the scrollbar */
+    .main .block-container::-webkit-scrollbar {
+        width: 10px;
     }
 
-    #chat-messages-wrapper::-webkit-scrollbar-track {
+    .main .block-container::-webkit-scrollbar-track {
         background: #1a1a1a;
-        border-radius: 4px;
     }
 
-    #chat-messages-wrapper::-webkit-scrollbar-thumb {
+    .main .block-container::-webkit-scrollbar-thumb {
         background: #DC2626;
-        border-radius: 4px;
+        border-radius: 5px;
     }
 
-    #chat-messages-wrapper::-webkit-scrollbar-thumb:hover {
+    .main .block-container::-webkit-scrollbar-thumb:hover {
         background: #EF4444;
     }
 
