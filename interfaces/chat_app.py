@@ -4,6 +4,7 @@ Supports multi-turn conversations about lease documents
 """
 
 import sys
+import os
 from pathlib import Path
 
 # Add parent directory to path for imports
@@ -19,6 +20,38 @@ st.set_page_config(
     page_icon="💬",
     layout="wide"
 )
+
+
+def check_password():
+    """Returns True if the user has entered the correct password."""
+    # Get password from environment variable, Streamlit secrets, or use default
+    correct_password = os.environ.get("APP_PASSWORD")
+    if not correct_password:
+        try:
+            correct_password = st.secrets.get("APP_PASSWORD", "Medley2026")
+        except Exception:
+            correct_password = "Medley2026"
+
+    if "password_correct" not in st.session_state:
+        st.session_state.password_correct = False
+
+    if st.session_state.password_correct:
+        return True
+
+    # Show login form
+    st.title("🔐 Medley Lease Management")
+    st.markdown("Please enter the password to access the application.")
+
+    password = st.text_input("Password", type="password", key="password_input")
+
+    if st.button("Login", type="primary"):
+        if password == correct_password:
+            st.session_state.password_correct = True
+            st.rerun()
+        else:
+            st.error("Incorrect password. Please try again.")
+
+    return False
 
 
 @st.cache_resource
@@ -42,6 +75,10 @@ def clear_conversation():
 
 
 def main():
+    # Check password before showing the app
+    if not check_password():
+        return
+
     initialize_session_state()
 
     # Initialize engine

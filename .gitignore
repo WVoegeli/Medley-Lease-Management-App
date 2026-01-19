@@ -2,6 +2,9 @@
 .env
 .env.local
 
+# Streamlit secrets (keep .example)
+.streamlit/secrets.toml
+
 # Python
 __pycache__/
 *.py[cod]
@@ -18,7 +21,10 @@ build/
 *.code-workspace
 
 # Claude Code local settings
-.claude/settings.local.json
+.claude/
+
+# Windows artifacts
+nul
 
 # Database (optional - uncomment to exclude)
 # data/chroma_db/
