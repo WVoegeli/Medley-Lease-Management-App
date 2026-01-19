@@ -1,0 +1,677 @@
+{
+  "timestamp": "20260118_235340",
+  "summary": {
+    "total": 78,
+    "successful": 78,
+    "failed": 0,
+    "success_rate": 100.0
+  },
+  "category_stats": {
+    "Basic Information": {
+      "total": 8,
+      "success": 8
+    },
+    "Financial Queries": {
+      "total": 8,
+      "success": 8
+    },
+    "Dates & Deadlines": {
+      "total": 8,
+      "success": 8
+    },
+    "Lease Terms & Options": {
+      "total": 8,
+      "success": 8
+    },
+    "Operating Requirements": {
+      "total": 8,
+      "success": 8
+    },
+    "Co-Tenancy & Exclusives": {
+      "total": 8,
+      "success": 8
+    },
+    "Comparison Queries": {
+      "total": 8,
+      "success": 8
+    },
+    "Follow-Up Questions": {
+      "total": 6,
+      "success": 6
+    },
+    "Complex Questions": {
+      "total": 8,
+      "success": 8
+    },
+    "Edge Cases": {
+      "total": 8,
+      "success": 8
+    }
+  },
+  "results": [
+    {
+      "category": "Basic Information",
+      "question": "What is Summit Coffee's monthly rent?",
+      "answer": "Summit Coffee's monthly rent varies depending on the lease year. Based on Excerpt 1, the monthly minimum rent for Summit Coffee is as follows:\n\n- Lease Years 1-2: $4,862.50 per month\n- Lease Year 3: $4,984.06 per month\n- Lease Year 4: $5,108.54 per month\n- Lease Year 5: $5,235.94 per month\n- Lease Year 6: $5,367.23 per month\n- Lease Year 7: $5,501.43 per month\n- Lease Year 8: $5,638.56 per month\n- Lease Year 9: $5,779.57 per month\n- Lease Year 10: $5,924.47 per month\n\nFor the 1st Option Period:\n- Lease Year 11: $6,072.29 per month\n- Lease Year 12: $6,224.00 per month\n- Lease Year 13: $6,379.60 per month\n- Lease Year 14: $6,539.09 per month\n- Lease Year 15: $6,702.47 per month\n\nFor the 2nd Option Period:\n- Lease Year 16: $6,869.74 per month\n- Lease Year 17: $7,041.87 per month\n- Lease Year 18: $7,217.90 per month\n- Lease Year 19: $7,398.78 per month\n- Lease Year 20: $7,583.56 per month\n\nThese amounts are consistent with the escalation details provided in Excerpt 2, which mentions a 2.5% annual escalation.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Basic Information",
+      "question": "What is Five Daughters Bakery's square footage?",
+      "answer": "Five Daughters Bakery's square footage is 806 square feet. This information is specified in both Excerpt 1 and Excerpt 2 of the lease document excerpts.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Basic Information",
+      "question": "What is Sephora's lease term length?",
+      "answer": "Sephora's lease term length is 10 years (120 months), commencing on November 1, 2026, and expiring on October 31, 2036.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Basic Information",
+      "question": "What is the monthly rent for 26 Thai?",
+      "answer": "The monthly rent for 26 Thai is as follows:\n\n- Months 1-12: $20,595.00 per month (with a 50% abatement for months 1-3)\n- Months 13-24: $21,109.88 per month\n- Months 25-36: $21,638.48 per month\n- Months 37-48: $22,180.82 per month\n- Months 49-60: $22,736.88 per month\n- Months 61-72: $23,306.68 per month\n- Months 73-84: $23,890.20 per month\n- Months 85-96: $24,487.46 per month\n- Months 97-108: $25,098.44 per month\n- Months 109-120: $25,726.59 per month\n- Months 121-121.5: $26,368.47 per month\n\nThese amounts are based on the rent schedule provided in Excerpt 4.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Basic Information",
+      "question": "What suite is Trader Joe's in?",
+      "answer": "Trader Joe's is located in Suite 1000.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Basic Information",
+      "question": "What is Playa Bowls' monthly rent?",
+      "answer": "Playa Bowls' monthly rent is $5,800 for the first 24 months of their lease term. This is based on a Year 1 rent of $58.00 per square foot for their 1,200 square foot space, resulting in an annual rent of $69,600, which translates to $5,800 per month. Additionally, there is a 50% rent abatement for the first three months, but the standard monthly rent is $5,800.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Basic Information",
+      "question": "What is CRU Food & Wine Bar's square footage?",
+      "answer": "CRU Food & Wine Bar's square footage is 2,100 square feet. This information is specified in both Excerpt 1 (Tenant Improvement Allowance) and Excerpt 2 (Lease Summary).",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Basic Information",
+      "question": "What is Drybar's lease commencement date?",
+      "answer": "Drybar's lease commencement date is November 1, 2026, as specified in Excerpt 1 under the \"TERM INFORMATION\" section.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Financial Queries",
+      "question": "What is Five Daughters Bakery's rent escalation schedule?",
+      "answer": "Five Daughters Bakery's rent escalation schedule is as follows:\n\n- **Year 1**: $69.00 per square foot, with an annual rent of $55,614.00 and a monthly rent of $4,634.50.\n- **Year 2**: $71.07 per square foot, with an annual rent of $57,282.42 and a monthly rent of $4,773.54.\n- **Year 3**: $73.20 per square foot, with an annual rent of $58,999.20 and a monthly rent of $4,916.60.\n- **Year 4**: $75.40 per square foot, with an annual rent of $60,772.40 and a monthly rent of $5,064.37.\n- **Year 5**: $77.66 per square foot, with an annual rent of $62,593.96 and a monthly rent of $5,216.16.\n- **Year 6**: $79.99 per square foot, with an annual rent of $64,471.94 and a monthly rent of $5,372.66.\n- **Year 7**: $82.39 per square foot, with an annual rent of $66,406.34 and a monthly rent of $5,533.86.\n- **Year 8**: $84.86 per square foot, with an annual rent of $68,397.16 and a monthly rent of $5,699.76.\n- **Year 9**: $87.41 per square foot, with an annual rent of $70,452.46 and a monthly rent of $5,871.04.\n- **Year 10**: $90.03 per square foot, with an annual rent of $72,564.18 and a monthly rent of $6,047.02.\n\nThe rent escalates by 3% annually, as indicated in the lease summary. The escalation continues through the lease term, with specific amounts detailed for each year.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Financial Queries",
+      "question": "What is the rent per square foot for Summit Coffee?",
+      "answer": "The rent per square foot for Summit Coffee is detailed in two different rent schedules provided in the excerpts. Based on Excerpt 2 and Excerpt 3, the rent per square foot for Summit Coffee is as follows:\n\n- Year 1: $50.00 per square foot\n- Year 2: $50.00 per square foot\n- Year 3: $51.25 per square foot\n- Year 4: $52.53 per square foot\n- Year 5: $53.84 per square foot\n- Year 6: $55.19 per square foot\n- Year 7: $56.57 per square foot\n- Year 8: $57.98 per square foot\n- Year 9: $59.43 per square foot\n- Year 10: $60.92 per square foot\n\nThese amounts reflect the annual minimum rent per square foot for each respective lease year.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Financial Queries",
+      "question": "What are the CAM charges for Sephora?",
+      "answer": "The CAM charges for Sephora are included in the rent, as specified in Excerpt 1 under the \"OPERATING EXPENSE RECOVERY\" section. The recovery type is described as \"Modified Gross - CAM included,\" indicating that CAM charges are not separately billed but are part of the overall rent amount. There are no specified CAM increases, and both estimated taxes and insurance are also included in the rent. Therefore, Sephora does not have separate CAM charges outside of their rent payments.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Financial Queries",
+      "question": "What is the security deposit amount for Trader Joe's?",
+      "answer": "The provided lease document excerpts do not include information about the security deposit amount for Trader Joe's.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Financial Queries",
+      "question": "What percentage rent does Five Daughters Bakery pay?",
+      "answer": "The provided lease excerpts do not include any information about a percentage rent for Five Daughters Bakery. The excerpts detail the tenant improvement allowance, lease summary, rent schedule, and co-tenancy clause, but they do not mention any percentage rent terms. Therefore, based on the information available, Five Daughters Bakery does not appear to pay a percentage rent, or such terms are not disclosed in the provided excerpts.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Financial Queries",
+      "question": "What is the annual rent for 26 Thai?",
+      "answer": "The annual rent for 26 Thai in the first year is $247,140. This is based on the Year 1 Rent Per Square Foot (PSF) of $60.00, as stated in Excerpt 2 under the \"RENT INFORMATION\" section.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Financial Queries",
+      "question": "What are the tenant improvement allowances for CRU Food & Wine Bar?",
+      "answer": "The tenant improvement allowance for CRU Food & Wine Bar is as follows:\n\n- TI Per Square Foot: $250.00\n- Total TI Allowance: $525,000\n\nThis allowance is provided by the Landlord to assist CRU Food & Wine Bar in building out their space.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Financial Queries",
+      "question": "What is the base rent for Playa Bowls?",
+      "answer": "The base rent for Playa Bowls is $58.00 per square foot for the first year. Given that Playa Bowls occupies 1,200 square feet, the Year 1 annual rent amounts to $69,600. This translates to a monthly rent of $5,800, with a 50% rent abatement for the first three months.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Dates & Deadlines",
+      "question": "When does Summit Coffee's lease expire?",
+      "answer": "Summit Coffee's lease expires on October 31, 2046. This information is found in Excerpt 1 under the \"TERM INFORMATION\" section, which states the Expiration Date as 2046-10-31.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Dates & Deadlines",
+      "question": "When is the lease commencement date for Five Daughters Bakery?",
+      "answer": "The lease commencement date for Five Daughters Bakery is November 1, 2026, as stated in Excerpt 1 under the Lease Summary section.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Dates & Deadlines",
+      "question": "What is the substantial completion date for Sephora?",
+      "answer": "The provided lease document excerpts do not specify the substantial completion date for Sephora. The excerpts include details about the landlord's work, tenant improvement allowance, co-tenancy clauses, and other lease terms, but they do not mention a specific date for the substantial completion of Sephora's premises.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Dates & Deadlines",
+      "question": "When is the rent commencement date for 26 Thai?",
+      "answer": "The rent commencement date for 26 Thai is November 1, 2026, as indicated in Excerpt 4 under the Lease Summary section.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Dates & Deadlines",
+      "question": "What are the critical dates for Trader Joe's lease?",
+      "answer": "The critical dates for Trader Joe's lease are as follows:\n\n- **Commencement Date:** November 1, 2026\n- **Expiration Date:** October 31, 2036\n\nAdditionally, Trader Joe's has the option to extend the lease with four 5-year renewal options after the initial term expires.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Dates & Deadlines",
+      "question": "When does Playa Bowls' lease start?",
+      "answer": "Playa Bowls' lease starts on November 1, 2026. This is specified in Excerpt 2 under the \"TERM INFORMATION\" section, where the \"Commencement Date\" is listed as 2026-11-01.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Dates & Deadlines",
+      "question": "What is the lease expiration date for Drybar?",
+      "answer": "The lease expiration date for Drybar is October 31, 2046. This information is found in Excerpt 5 under the \"TERM INFORMATION\" section of the Lease Summary.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Dates & Deadlines",
+      "question": "When is the grand opening date mentioned in the leases?",
+      "answer": "The lease excerpts provided do not specify a grand opening date for the Medley retail development. The documents mention various terms related to the commencement of leases and opening dates for individual tenants, but they do not include a specific grand opening date for the entire development.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Lease Terms & Options",
+      "question": "What renewal options does Summit Coffee have?",
+      "answer": "Summit Coffee does not have any renewal options in their lease agreement. According to Excerpt 1, under the \"TERM INFORMATION\" section, it explicitly states \"Renewal Options: None.\" Therefore, Summit Coffee's lease does not include any options for renewal beyond the initial 20-year term.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Lease Terms & Options",
+      "question": "What are the renewal terms for Five Daughters Bakery?",
+      "answer": "The renewal terms for Five Daughters Bakery indicate that there are no renewal options available. According to Excerpt 1, under the \"TERM INFORMATION\" section, it is explicitly stated that the \"Renewal Options\" are \"None.\" Therefore, Five Daughters Bakery does not have any renewal options as part of their lease agreement.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Lease Terms & Options",
+      "question": "Does Sephora have any extension options?",
+      "answer": "Yes, Sephora has extension options. According to the lease summary in Excerpt 1, Sephora has two 5-year renewal options.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Lease Terms & Options",
+      "question": "What are the termination rights for Trader Joe's?",
+      "answer": "Trader Joe's does not have any termination rights based on the co-tenancy clause provided in the lease document excerpts. The co-tenancy clause for Trader Joe's specifies that if the co-tenancy threshold is not met, Trader Joe's may defer opening or pay 50% rent until the threshold is satisfied. However, it explicitly states \"Termination Rights: No termination right.\" Therefore, Trader Joe's cannot terminate the lease based on the co-tenancy conditions outlined.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Lease Terms & Options",
+      "question": "What expansion options does 26 Thai have?",
+      "answer": "The lease excerpts provided do not mention any specific expansion options for 26 Thai. The excerpts cover lease term information, tenant improvement allowance, co-tenancy, data sheet details, and recovery structure/CAM, but they do not include any clauses or sections related to expansion options. Therefore, based on the information available, there are no documented expansion options for 26 Thai in the provided lease excerpts.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Lease Terms & Options",
+      "question": "Does CRU Food & Wine Bar have a renewal option?",
+      "answer": "Based on the information provided in Excerpt 1 of the lease agreement for CRU Food & Wine Bar, there are no renewal options available. The \"Renewal Options\" section explicitly states \"None.\"",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Lease Terms & Options",
+      "question": "What are the option periods for Playa Bowls?",
+      "answer": "The option periods for Playa Bowls are two 5-year renewal options. This information is found in Excerpt 2 under the \"TERM INFORMATION\" section of the Lease Summary for Playa Bowls.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Lease Terms & Options",
+      "question": "What is the notice period for renewal for Drybar?",
+      "answer": "Based on the provided lease excerpts, Drybar does not have any renewal options. The Lease Summary in Excerpt 3 explicitly states \"Renewal Options: None.\" Therefore, there is no notice period for renewal applicable to Drybar under the terms of this lease.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Operating Requirements",
+      "question": "What are the operating hours requirements for Summit Coffee?",
+      "answer": "The provided lease document excerpts do not contain any information regarding the operating hours requirements for Summit Coffee. If you need details about operating hours, you may need to refer to other sections of the lease agreement not included in the excerpts provided.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Operating Requirements",
+      "question": "What are the permitted uses for Five Daughters Bakery?",
+      "answer": "The permitted use for Five Daughters Bakery, as specified in the lease summary, is \"Specialty Donuts.\" This falls under the category of \"Food & Beverage.\"",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Operating Requirements",
+      "question": "What are the signage requirements for Sephora?",
+      "answer": "The signage requirements for Sephora, as outlined in the lease agreement excerpts, are as follows:\n\n- The Landlord is responsible for providing power and blocking for Tenant\u2019s signage in locations designated by Sephora. The signage itself is to be provided by Sephora.\n- Sephora is allowed to install a full wrap branded graphic display identifying the store name and \"Coming Soon\" on the construction barricade. Alternatively, Sephora may install first surface vinyl \"Coming Soon\" graphics on the storefront in lieu of a construction barricade.\n\nThese requirements are specified in the \"STORE FRONT\" section of Exhibit B of the lease agreement.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Operating Requirements",
+      "question": "What are the maintenance obligations for Trader Joe's?",
+      "answer": "The provided lease excerpts do not specify the maintenance obligations for Trader Joe's. The excerpts cover co-tenancy clauses, lease summary, co-tenancy risk analysis, tenant improvement allowance, and recovery structure/CAM, but they do not detail maintenance responsibilities. Therefore, based on the information given, Trader Joe's maintenance obligations are not available.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Operating Requirements",
+      "question": "What are the insurance requirements for 26 Thai?",
+      "answer": "The provided excerpts do not contain specific details regarding the insurance requirements for 26 Thai. The excerpts mention that the tenant must carry a liquor liability insurance policy with limits of liability as set forth in Section 9.2, but the actual limits and other insurance requirements are not included in the provided text. Therefore, the specific insurance requirements for 26 Thai cannot be determined from the information given.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Operating Requirements",
+      "question": "What are the parking requirements for CRU Food & Wine Bar?",
+      "answer": "The provided lease document excerpts do not contain any specific information regarding the parking requirements for CRU Food & Wine Bar. If you need details about parking requirements, you may need to refer to other sections of the lease agreement or additional documents that address parking provisions.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Operating Requirements",
+      "question": "What are the use restrictions for Playa Bowls?",
+      "answer": "The use restrictions for Playa Bowls, as outlined in their lease agreement, specify that the Landlord will not knowingly and intentionally enter into a lease for the primary use of the retail sale of acai bowls, smoothies, and juices. This restriction applies as long as Playa Bowls is not in default under their lease and is continuously operating in the premises for their permitted use. The term \"Primary Use\" is defined as a tenant whose use of their premises for these \"Restricted Products\" exceeds fifteen percent (15%) of their gross sales.\n\nIf the Landlord violates this covenant, Playa Bowls has the right, upon thirty (30) days written notice to the Landlord, to pay seventy-five percent (75%) of the applicable rent in lieu of Minimum Rent and Percentage Rent. Upon cessation of the sale of Restricted Products by other tenants (except Selective Tenants), Playa Bowls must return to paying full rent as required under the lease.\n\n\"Selective Tenants\" are defined as:\n(i) Any tenant under a lease signed prior to the date of Playa Bowls' lease,\n(ii) Any tenant whose lease permits the assignment or subletting of the premises to sell the Restricted Products,\n(iii) Any tenant occupying at least 10,000 square feet of gross leasable area within the Shopping Center.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Operating Requirements",
+      "question": "What are the operating covenants for Drybar?",
+      "answer": "The operating covenant for Drybar, as specified in the lease agreement, is that during the term of the lease, the landlord shall not lease, rent, occupy, or permit to be occupied or used any space in the Shopping Center (including any expansion thereof) for the purpose of blow-dry only services, beyond ten percent (10%) of annual revenues. This is referred to as the \"Protected Use.\"",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Co-Tenancy & Exclusives",
+      "question": "What co-tenancy provisions does Sephora have?",
+      "answer": "Sephora's co-tenancy provisions are as follows:\n\n- **Co-Tenancy Type**: Opening + Operating\n- **Risk Level**: High\n- **Threshold Requirements**:\n  - **Opening**: Trader Joe's must have executed their lease, and 75% of the Gross Leasable Area (GLA) must be occupied.\n  - **Operating**: Trader Joe's must be open, and 70% of the other tenants must be open.\n- **Remedy if Threshold Not Met**: Sephora may defer opening or pay 50% of the rent if they choose to open early despite the threshold not being met.\n- **Termination Rights**: Sephora has multiple triggers for termination rights if the co-tenancy conditions are not satisfied.\n- **Named Co-Tenant Requirement**: Trader Joe's is the named co-tenant whose presence is critical for Sephora's co-tenancy clause.\n- **Annual Rent at Risk**: $99,141\n\nThis clause is considered high risk, primarily due to the dependency on Trader Joe's and the significant portion of GLA that must be occupied.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Co-Tenancy & Exclusives",
+      "question": "Does Trader Joe's have any exclusive use rights?",
+      "answer": "Yes, Trader Joe's has exclusive use rights as outlined in the lease agreement. According to the excerpts provided, the Landlord agrees not to lease, sell, or otherwise permit any portion of the Project (other than Trader Joe's Premises) or any other parcel, property, or shopping center owned or ground leased by the Landlord or its affiliates to be used for the sale of grocery items for human use or consumption or alcoholic beverages for off-premises consumption. This exclusive use right is subject to certain exceptions, such as \"Incidental Sales\" and one first-class high-end local wine store not exceeding 2,100 square feet located within the designated \"Wine Store Area.\" Additionally, the exclusive use applies to kiosks, carts, vending machines, pop-ups, and other non-traditional or non-store uses.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Co-Tenancy & Exclusives",
+      "question": "What are the co-tenancy requirements for Five Daughters Bakery?",
+      "answer": "The co-tenancy requirements for Five Daughters Bakery, as outlined in the lease document excerpts, are as follows:\n\n- **Co-Tenancy Type**: Operating\n- **Risk Level**: LOW\n- **Threshold**: After Year 3, less than 50% of non-anchor Gross Leasable Area (GLA) must be occupied.\n- **Remedy if Not Met**: If the co-tenancy threshold is not met, Five Daughters Bakery is entitled to a 25% rent reduction for up to 12 months.\n- **Termination Rights**: If the co-tenancy threshold is still not met after the 12-month remedy period, Five Daughters Bakery may terminate the lease.\n- **Named Co-Tenant Requirement**: None\n- **Annual Rent at Risk**: $13,904\n\nThis clause indicates that Five Daughters Bakery has a low-risk co-tenancy requirement, with specific remedies and termination rights if the occupancy threshold is not met.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Co-Tenancy & Exclusives",
+      "question": "Does Summit Coffee have any exclusive rights?",
+      "answer": "Based on the provided lease document excerpts, there is no mention of Summit Coffee having any exclusive rights. The excerpts do not include any clauses or sections that grant Summit Coffee exclusivity in any form, such as being the only coffee shop or food and beverage provider within the Medley retail development. Therefore, based on the information available, Summit Coffee does not have any exclusive rights in their lease agreement.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Co-Tenancy & Exclusives",
+      "question": "What are the opening co-tenancy requirements for Sephora?",
+      "answer": "The opening co-tenancy requirements for Sephora are as follows:\n\n- Co-Tenancy Type: Opening + Operating\n- Named Co-Tenant Requirement: Trader Joe's\n- Threshold for Opening: Trader Joe's must have executed their lease, and 75% of the Gross Leasable Area (GLA) must be open.\n- Remedy if Not Met: Sephora may defer its opening or choose to open early and pay 50% of the rent if the co-tenancy threshold is not met.\n- Annual Rent at Risk: $99,141\n\nSephora's co-tenancy clause is considered high risk, primarily due to its dependency on Trader Joe's as a critical anchor tenant.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Co-Tenancy & Exclusives",
+      "question": "What are the ongoing co-tenancy provisions for Trader Joe's?",
+      "answer": "The ongoing co-tenancy provisions for Trader Joe's are as follows:\n\n1. **Co-Tenancy Type**: Opening\n2. **Threshold Requirement**: 70,000 square feet of other retailers must be open or scheduled to open.\n3. **Remedy if Not Met**: Trader Joe's has the option to defer its opening or pay 50% of the rent until the co-tenancy threshold is satisfied.\n4. **Termination Rights**: Trader Joe's does not have termination rights under this co-tenancy clause.\n5. **Named Co-Tenant Requirement**: There is no named co-tenant requirement for Trader Joe's.\n6. **Annual Rent at Risk**: $165,669\n\nTrader Joe's is considered a critical anchor tenant, and its opening triggers other co-tenancy clauses for tenants like Sephora and High Country Outfitters. If Trader Joe's delays its opening, there is a significant amount of rent at risk, totaling $364,810 for high-risk tenants dependent on Trader Joe's opening.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Co-Tenancy & Exclusives",
+      "question": "Does CRU Food & Wine Bar have any exclusivity clauses?",
+      "answer": "Yes, CRU Food & Wine Bar has an exclusivity clause. According to the lease excerpts, as long as CRU Food & Wine Bar is not in default of the lease beyond any applicable cure period and the premises is fully staffed, stocked, fixtured, and open for business operating as a Cru Food & Wine Bar, the landlord covenants that it shall not knowingly or intentionally lease or license any space in the shopping center whose primary use is for the operation of a wine bar. A \"wine bar\" is defined as a restaurant establishment that advertises as a wine bar or primarily sells wine for on-site consumption (i.e., more than 50%) with the sale of food and other products being sold on an incidental basis (i.e., less than 50%).\n\nHowever, this exclusivity does not apply to:\n(i) existing tenants or occupants of the shopping center or their respective successors, assigns, or subtenants unless the landlord has mandatory approval rights for such subleasing or assignment, and provided such tenant has asked for the landlord\u2019s consent,\n(ii) any tenant occupying more than 20,000 square feet of space with an \u201copen\u201d use clause,\n(iii) other tenants/owners/occupants in the shopping center having the right to use their premises for the permitted use as an incidental part of their business (e.g., restaurants with a bar that sells wine), or\n(iv) bottle shops or retail wine shops.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Co-Tenancy & Exclusives",
+      "question": "What are the protected uses for Playa Bowls?",
+      "answer": "The protected uses for Playa Bowls, as specified in their lease agreement, are the retail sale of acai bowls, smoothies, and juices. The lease states that the Landlord will not knowingly and intentionally enter into a lease for the primary use of these Restricted Products, defined as exceeding fifteen percent (15%) of a tenant's gross sales, with any tenant other than the Selective Tenants. If the Landlord violates this covenant, Playa Bowls has the right to pay seventy-five percent (75%) of the applicable rent instead of the full Minimum Rent and Percentage Rent, until the violation ceases.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Comparison Queries",
+      "question": "Compare the monthly rent between Summit Coffee and Five Daughters Bakery",
+      "answer": "Based on the provided lease excerpts, here is a comparison of the monthly rent between Summit Coffee and Five Daughters Bakery:\n\n**Five Daughters Bakery:**\n- Year 1 Monthly Rent: $4,634.50\n- Year 5 Monthly Rent: $5,216.16\n- Year 10 Monthly Rent: $6,047.02\n\n**Summit Coffee:**\n- Year 1 Monthly Rent: $4,862.50\n- Year 5 Monthly Rent: $5,235.94\n- Year 10 Monthly Rent: $5,924.47\n\n**Comparison:**\n- In Year 1, Summit Coffee's monthly rent ($4,862.50) is higher than Five Daughters Bakery's monthly rent ($4,634.50).\n- In Year 5, Summit Coffee's monthly rent ($5,235.94) is slightly higher than Five Daughters Bakery's monthly rent ($5,216.16).\n- In Year 10, Five Daughters Bakery's monthly rent ($6,047.02) is higher than Summit Coffee's monthly rent ($5,924.47).\n\nOverall, Summit Coffee has a higher monthly rent in the earlier years, but Five Daughters Bakery surpasses Summit Coffee in Year 10.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Comparison Queries",
+      "question": "Which tenant has the longest lease term?",
+      "answer": "Based on the provided lease excerpts, the tenant with the longest lease term is Kontour Medical Spa at Medley, with an original term of ten (10) years and four (4) months as specified in Excerpt 1, Section 2.2. The lease terms for the other tenants (Fogon & Lions, Basil Houze, Body 20, and Drybar) are not specified in the provided excerpts.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Comparison Queries",
+      "question": "Which tenant pays the highest rent per square foot?",
+      "answer": "Based on the provided lease document excerpts, the tenant that pays the highest rent per square foot is Five Daughters Bakery, with a rent rate of $69.00 per square foot.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Comparison Queries",
+      "question": "Compare the renewal options across all cafe tenants",
+      "answer": "Based on the provided lease excerpts for Summit Coffee, the renewal options are structured as follows:\n\n1. **First Option Period:**\n   - Lease Years: 11 to 15\n   - Annual Minimum Rent and Flat Rate Charge Per Square Foot increase each year during this period.\n   - The Annual Minimum Rent starts at $72,867.48 in Year 11 and increases to $80,429.64 by Year 15.\n   - The Flat Rate Charge Per Square Foot starts at $22.19 in Year 11 and increases to $25.96 by Year 15.\n   - Sales Break Points also increase annually, starting at $1,821,687.00 in Year 11 and reaching $2,010,741.00 by Year 15.\n\n2. **Second Option Period:**\n   - Lease Years: 16 to 20\n   - Similar to the first option period, both the Annual Minimum Rent and Flat Rate Charge Per Square Foot continue to increase each year.\n   - The Annual Minimum Rent starts at $82,436.88 in Year 16 and increases to $91,002.66 by Year 20.\n   - The Flat Rate Charge Per Square Foot starts at $27.00 in Year 16 and increases to $31.58 by Year 20.\n   - Sales Break Points also increase annually, starting at $2,060,922.00 in Year 16 and reaching $2,275,066.50 by Year 20.\n\nThe excerpts provided do not include information about renewal options for other cafe tenants, so a comparison cannot be made. If there are other cafe tenants with lease excerpts available, please provide them for a comprehensive comparison.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Comparison Queries",
+      "question": "Which tenants have co-tenancy provisions?",
+      "answer": "Based on the provided lease document excerpts, only Pause Studio has a co-tenancy provision in their lease. The other tenants, STIR, Petfolk, Body20, and Knuckies Hoagies, do not have co-tenancy clauses in their leases.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Comparison Queries",
+      "question": "Compare the square footage of all retail tenants",
+      "answer": "Based on the provided lease document excerpts, here is a comparison of the square footage for the retail tenants at the Medley Shopping Center:\n\n1. **Trader Joe's**: 13,524 SF\n2. **Sephora**: 4,721 SF\n3. **Knuckies Hoagies**: 1,200 SF\n4. **CRU Food & Wine Bar**: 2,100 SF\n5. **Five Daughters Bakery**: 806 SF\n6. **Playa Bowls**: 1,200 SF\n7. **Lily Sushi**: 2,000 SF\n8. **26 Thai**: 4,119 SF\n9. **Pause Studio**: 2,800 SF\n10. **High Country Outfitters**: 4,000 SF\n11. **Northern China Eatery**: 2,500 SF\n12. **STIR**: 6,000 SF\n13. **Fado Irish Pub**: 4,200 SF\n14. **Cookie Fix**: 1,000 SF\n15. **Sugarcoat Beauty**: 2,500 SF\n16. **AYA Med Spa**: 1,500 SF\n17. **Body20**: 1,300 SF\n18. **Basil Houze**: 991 SF\n19. **Clean Your Dirty Face**: 878 SF\n20. **Burdlife**: 1,200 SF\n21. **Petfolk**: 1,800 SF\n22. **Kontour Medical Spa**: 1,500 SF\n23. **Drybar**: 1,712 SF\n24. **BODYROK**: 2,057 SF\n25. **Summit Coffee**: 1,167 SF\n26. **Fogon & Lions**: 4,707 SF\n27. **Rena's Italian**: 4,752 SF\n28. **Amorino Gelato**: 1,200 SF\n29. **Minnie Olivia Pizzeria**: 2,366 SF\n\nThese figures represent the gross leasable area (GLA) for each tenant as specified in the lease excerpts.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Comparison Queries",
+      "question": "Which tenants have percentage rent clauses?",
+      "answer": "The provided lease document excerpts do not mention any percentage rent clauses for the tenants listed. The excerpts focus on co-tenancy clauses and remedies related to occupancy thresholds, such as rent reductions or substitute rent, but do not specify any percentage rent terms. Therefore, based on the information provided, none of the tenants have percentage rent clauses.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Comparison Queries",
+      "question": "Compare the security deposits across all tenants",
+      "answer": "The provided lease document excerpts do not contain specific information about the security deposit amounts for any of the tenants, including Body 20, Kontour Medical Spa at Medley, STIR, Cookie Fix, or Drybar. The excerpts mention the existence of a security deposit requirement (as seen in Section 3.5 for Body 20), but the actual amounts are referenced in a \"Data Sheet\" which is not included in the excerpts provided.\n\nTherefore, I cannot compare the security deposits across all tenants based on the information given.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Follow-Up Questions",
+      "question": "What is Five Daughters Bakery's rent schedule? \u2192 What about per month?",
+      "answer": "Based on the provided lease document excerpts, Five Daughters Bakery's monthly rent schedule is as follows:\n\n- **Year 1**: $4,634.50 per month\n- **Year 2**: $4,773.54 per month\n- **Year 3**: $4,916.60 per month\n- **Year 4**: $5,064.37 per month\n- **Year 5**: $5,216.16 per month\n- **Year 6**: $5,372.66 per month\n- **Year 7**: $5,533.86 per month\n- **Year 8**: $5,699.76 per month\n- **Year 9**: $5,871.04 per month\n- **Year 10**: $6,047.02 per month\n\nFor the option renewal years, the monthly rent is:\n\n- **Year 11**: $6,228.37 per month\n- **Year 12**: $6,415.09 per month\n- **Year 13**: $6,607.86 per month\n- **Year 14**: $6,806.00 per month\n- **Year 15**: $7,010.19 per month\n\nThese amounts reflect the monthly minimum rent for each lease year.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Follow-Up Questions",
+      "question": "Tell me about Summit Coffee's lease \u2192 When does it expire?",
+      "answer": "Summit Coffee's lease at the Medley retail development expires on October 31, 2046.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Follow-Up Questions",
+      "question": "What is Sephora's square footage? \u2192 What about their rent?",
+      "answer": "Sephora's rent details are as follows:\n\n- **Lease Years 1-5:**\n  - Rent Per Square Foot: $42.00\n  - Annual Rent: $198,282.00\n  - Monthly Rent: $16,523.50\n\n- **Lease Years 6-10:**\n  - Rent Per Square Foot: $46.20\n  - Annual Rent: $218,110.20\n  - Monthly Rent: $18,175.85\n\n- **First Option Period:**\n  - Rent Per Square Foot: $50.82\n  - Annual Rent: $239,921.22\n  - Monthly Rent: $19,993.45\n\n- **Second Option Period:**\n  - Rent Per Square Foot: $55.90\n  - Annual Rent: $263,903.90\n  - Monthly Rent: $21,991.99\n\nThe rent escalates by 10% every 5 years.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Follow-Up Questions",
+      "question": "What is Trader Joe's monthly rent? \u2192 Do they have renewal options?",
+      "answer": "Yes, Trader Joe's has renewal options. According to the Lease Summary in Excerpt 1, they have four 5-year extensions available.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Follow-Up Questions",
+      "question": "What are the renewal terms for 26 Thai? \u2192 What is the notice period?",
+      "answer": "The provided lease excerpts do not specify a notice period for 26 Thai. If you are referring to a specific type of notice, such as notice for renewal, termination, or any other specific action, that information is not included in the excerpts you provided. You may need to refer to the full lease document or specific sections that address notice requirements for more detailed information.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Follow-Up Questions",
+      "question": "What is the lease term for Playa Bowls? \u2192 What about rent escalations?",
+      "answer": "For Playa Bowls, the rent escalations are structured as follows:\n\n- The initial rent for Year 1 is set at $58.00 per square foot, resulting in an annual rent of $69,600.\n- There is a 3% annual escalation rate applied to the rent.\n- The rent schedule specifies that for months 1-24, the rent is $58.00 per square foot, with a monthly rent of $5,800. Notably, there is a 50% rent abatement for months 1-3.\n- By months 49-60, the rent increases to $63.38 per square foot, with a monthly rent of $6,338.\n\nThese escalations occur every year, reflecting the 3% annual increase in rent.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Complex Questions",
+      "question": "What is the total monthly rent across all tenants?",
+      "answer": "To determine the total monthly rent across all tenants, we will sum the monthly rent amounts provided for each tenant in the excerpts.\n\nFrom Excerpt 1, we have the following annual rents, which we will convert to monthly rents:\n\n1. Five Daughters Bakery: $55,614/year = $4,634.50/month\n2. CRU Food & Wine Bar: $136,500/year = $11,375.00/month\n3. Amorino Gelato: $78,000/year = $6,500.00/month\n4. Lily Sushi: $125,000/year = $10,416.67/month\n5. AYA Med Spa: $93,750/year = $7,812.50/month\n6. Kontour Medical Spa: $93,750/year = $7,812.50/month\n7. 26 Thai: $247,140/year = $20,595.00/month (confirmed in Excerpt 2)\n8. Burdlife: $72,000/year = $6,000.00/month\n9. BODYROK: $123,420/year = $10,285.00/month\n10. Rena's Italian: $285,120/year = $23,760.00/month\n11. Northern China Eatery: $147,500/year = $12,291.67/month\n12. Playa Bowls: $69,600/year = $5,800.00/month\n13. Cookie Fix: $57,250/year = $4,770.83/month\n14. Petfolk: $102,600/year = $8,550.00/month\n15. Minnie Olivia Pizzeria: $132,496/year = $11,041.33/month\n16. Knuckies Hoagies: $66,000/year = $5,500.00/month\n17. Pause Studio: $154,000/year = $12,833.33/month\n18. STIR: $330,000/year = $27,500.00/month\n19. Fado Irish Pub: $231,000/year = $19,250.00/month\n20. Sugarcoat Beauty: $137,500/year = $11,458.33/month\n21. Body20: $71,500/year = $5,958.33/month (confirmed in Excerpt 4)\n22. Basil Houze: $52,028/year = $4,335.67/month\n23. Clean Your Dirty Face: $46,095/year = $3,841.25/month\n24. High Country Outfitters: $200,000/year = $16,666.67/month\n25. Summit Coffee: $58,350/year = $4,862.50/month\n26. Fogon & Lions: $235,350/year = $19,612.50/month\n27. Sephora: $198,282/year = $16,523.50/month\n28. Drybar: $71,904/year = $5,992.00/month\n29. Trader Joe's: $331,338/year = $27,611.50/month\n\nNow, summing all the monthly rents:\n\nTotal Monthly Rent = $4,634.50 + $11,375.00 + $6,500.00 + $10,416.67 + $7,812.50 + $7,812.50 + $20,595.00 + $6,000.00 + $10,285.00 + $23,760.00 + $12,291.67 + $5,800.00 + $4,770.83 + $8,550.00 + $11,041.33 + $5,500.00 + $12,833.33 + $27,500.00 + $19,250.00 + $11,458.33 + $5,958.33 + $4,335.67 + $3,841.25 + $16,666.67 + $4,862.50 + $19,612.50 + $16,523.50 + $5,992.00 + $27,611.50\n\nTotal Monthly Rent = $362,618.08\n\nTherefore, the total monthly rent across all tenants is $362,618.08.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Complex Questions",
+      "question": "Which leases expire in 2025?",
+      "answer": "Based on the provided lease document excerpts, the leases that expire in 2025 are:\n\n1. **Burdlife12.8.23**: The lease term for Burdlife12.8.23 is 121 months (10 years and 1 month). Since the lease starts in December 2023 (as indicated by the tenant name \"Burdlife12.8.23\"), it will expire in January 2034, not in 2025.\n\n2. **Clean Your Dirty Face**: The lease term for Clean Your Dirty Face is 123 months (10 years and 3 months). Without a specific start date provided, we cannot determine the exact expiration year. However, if it started in 2023, it would expire in 2033.\n\n3. **Body 20**: The lease term for Body 20 is 10 years. Without a specific start date provided, we cannot determine the exact expiration year. However, if it started in 2023, it would expire in 2033.\n\n4. **Sugarcoat Beauty**: The lease term for Sugarcoat Beauty is 10 years. Without a specific start date provided, we cannot determine the exact expiration year. However, if it started in 2023, it would expire in 2033.\n\nNone of the leases provided in the excerpts explicitly expire in 2025 based on the information given.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Complex Questions",
+      "question": "What is the average rent per square foot for food tenants?",
+      "answer": "To calculate the average rent per square foot for food tenants, we need to consider the rent per square foot for each food tenant listed in the excerpts.\n\nFrom Excerpt 1, the food tenants and their rent per square foot are:\n1. Five Daughters Bakery: $69.00/SF\n2. CRU Food & Wine Bar: $65.00/SF\n3. Amorino Gelato: $65.00/SF\n4. Lily Sushi: $62.50/SF\n5. 26 Thai: $60.00/SF\n6. Rena's Italian: $60.00/SF\n7. Northern China Eatery: $59.00/SF\n8. Playa Bowls: $58.00/SF\n9. Cookie Fix: $57.25/SF\n10. Minnie Olivia Pizzeria: $56.00/SF\n11. Knuckies Hoagies: $55.00/SF\n12. STIR: $55.00/SF\n13. Fado Irish Pub: $55.00/SF\n14. Basil Houze: $52.50/SF\n15. Fogon & Lions: $50.00/SF\n\nNow, we calculate the average rent per square foot for these food tenants:\n\n\\[\n\\text{Average Rent/SF} = \\frac{69 + 65 + 65 + 62.5 + 60 + 60 + 59 + 58 + 57.25 + 56 + 55 + 55 + 55 + 52.5 + 50}{15}\n\\]\n\n\\[\n\\text{Average Rent/SF} = \\frac{939.25}{15} = 62.6167\n\\]\n\nTherefore, the average rent per square foot for food tenants is approximately $62.62/SF.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Complex Questions",
+      "question": "List all tenants with leases longer than 10 years",
+      "answer": "Based on the provided lease document excerpts, the tenants with leases longer than 10 years are:\n\n1. **Kontour Medical Spa at Medley**: The original term of the lease is ten (10) years and four (4) months, which exceeds 10 years.\n\nThe other tenants, Clean Your Dirty Face and Burdlife12.8.23, have initial lease terms of 10 years (as indicated by the rent schedules covering up to 121 months), but they do not exceed 10 years unless option terms are exercised, which are not part of the original lease term. Fogon & Lions and Petfolk do not have lease term information provided in the excerpts.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Complex Questions",
+      "question": "Which tenants have both renewal options and co-tenancy provisions?",
+      "answer": "Based on the provided lease document excerpts, the tenants with both renewal options and co-tenancy provisions are not explicitly listed. The excerpts only provide information about co-tenancy provisions for the following tenants:\n\n1. Pause Studio\n2. Five Daughters Bakery\n3. Fado Irish Pub\n4. High Country Outfitters\n\nRena's Italian does not have a co-tenancy clause.\n\nHowever, the excerpts do not mention renewal options for any of these tenants. Therefore, based on the information provided, it is not possible to determine which tenants have both renewal options and co-tenancy provisions.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Complex Questions",
+      "question": "What is the total square footage leased to retail tenants?",
+      "answer": "Based on the provided lease document excerpts, the total square footage leased to retail tenants is 79,800 square feet. This information is found in Excerpt 4 under the \"MEDLEY SHOPPING CENTER - PORTFOLIO SUMMARY,\" which states the \"Total Leasable Area\" as 79,800 SF.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Complex Questions",
+      "question": "Which tenants have the most favorable renewal terms?",
+      "answer": "Based on the provided lease excerpts, the tenants with the most favorable renewal terms in terms of co-tenancy clauses are those without any co-tenancy clauses, as they are not subject to rent reductions or termination rights based on the occupancy levels of other tenants. These tenants are:\n\n1. **Rena's Italian** - This tenant has no co-tenancy clause in their lease, meaning they will pay full rent regardless of other tenant occupancy levels.\n\n2. **Drybar** - Similarly, Drybar has no co-tenancy clause, ensuring they pay full rent regardless of other tenant occupancy levels.\n\nThese terms are favorable because they provide stability and predictability in rent obligations, independent of the performance or occupancy of other tenants in the development.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Complex Questions",
+      "question": "What are the prohibited uses across all leases?",
+      "answer": "Based on the provided lease excerpts, the following uses are prohibited across all leases for the Medley retail development:\n\n1. **Religious Facilities**: Any church, synagogue, or other religious facility.\n2. **Vehicle Sales/Leasing**: Any facility for the sale, lease, or rental of automobiles, trucks, motorcycles, recreational vehicles, boats, or other vehicles, except for auto showrooms such as Tesla.\n3. **Manufacturing**: Any manufacturing facility.\n4. **Dry Cleaners**: Any dry cleaner, except for a drop-off/pick-up only facility.\n5. **Discount and Second-Hand Retail**:\n   - Any retail operation where more than 20% of the sales area is used for closeouts, manufacturer\u2019s overruns, excess inventory, or imperfect merchandise.\n   - Any \u201csecond hand\u201d store, used clothing or thrift store, pawn shop, Salvation Army type store, \u201csurplus\u201d store, or liquidation outlet, with exceptions for stores like Plato\u2019s Closet and \u201cDesigner Consignment\u201d shops.\n   - Any discount retailer, such as \u201cdollar\u201d stores like Family Dollar or Dollar Tree.\n6. **Mortuary/Funeral Services**: Any mortuary or funeral parlor.\n7. **Coin Operated Laundry**: Any coin-operated laundry or equivalent self-service laundry.\n8. **Massage Parlors**: Any massage parlor, except for therapeutic massage facilities like \u201cMassage Envy.\u201d\n9. **Marijuana Dispensaries**: Any marijuana dispensary, store, or shop.\n10. **Inconsistent Uses**: Any use inconsistent with the customary character of a first-class retail shopping center, including head shops, vape shops, adult book shops, adult movie houses, and tattoo or piercing parlors.\n\nAdditionally, specific leases (such as Rena's Italian Medley and Sephora) include further restrictions on uses like Trader Joe\u2019s, certain types of entertainment and recreational facilities, and other specific noxious uses, but these are not universally prohibited across all leases.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Edge Cases",
+      "question": "What is the rent for a tenant that doesn't exist?",
+      "answer": "The provided lease document excerpts do not contain any information about a tenant that doesn't exist. Therefore, it is not possible to determine the rent for a non-existent tenant based on the given excerpts. Each excerpt only specifies that the listed tenants (Rena's Italian, STIR, Petfolk, BODYROK, and Body20) will pay full rent regardless of other tenant occupancy levels, but no rent amounts are provided.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Edge Cases",
+      "question": "Tell me about XYZ Company's lease",
+      "answer": "The provided lease document excerpts do not contain any information regarding XYZ Company's lease. The excerpts include details about leases for AYA Med Spa, Five Daughters Bakery, Sephora, Burdlife12.8.23, and Body 20, but there is no mention of XYZ Company. If you have specific questions about any of the tenants listed in the excerpts, please let me know, and I can provide information based on those details.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Edge Cases",
+      "question": "What is the monthly rent?",
+      "answer": "Based on the provided lease document excerpts, the monthly rent for each tenant is as follows:\n\n1. **Burdlife12.8.23**:\n   - Lease Months 1 \u2013 12: $6,000.00\n   - Lease Months 13 \u2013 24: $6,000.00\n   - Lease Months 25 \u2013 36: $6,150.00\n   - Lease Months 37 \u2013 48: $6,304.00\n   - Lease Months 49 \u2013 60: $6,462.00\n   - Lease Months 61 \u2013 72: $6,624.00\n   - Lease Months 73 \u2013 84: $6,790.00\n   - Lease Months 85 \u2013 96: $6,960.00\n   - Lease Months 97 \u2013 108: $7,134.00\n   - Lease Months 109 \u2013 121: $7,312.00\n\n2. **Clean Your Dirty Face**:\n   - Lease Months 1 \u2013 12: $3,841.25\n   - Lease Months 13 \u2013 24: $3,918.08\n   - Lease Months 25 \u2013 36: $3,996.36\n   - Lease Months 37 \u2013 48: $4,076.12\n   - Lease Months 49 \u2013 60: $4,157.33\n   - Lease Months 61 \u2013 72: $4,240.74\n   - Lease Months 73 \u2013 84: $4,325.61\n   - Lease Months 85 \u2013 96: $4,411.95\n   - Lease Months 97 \u2013 108: $4,500.48\n   - Lease Months 109 \u2013 123: $4,590.48\n\n3. **Body 20**:\n   - Year 1: $5,958.33\n   - Year 2: $6,107.83\n   - Year 3: $6,260.58\n   - Year 4: $6,416.58\n   - Year 5: $6,576.92\n   - Year 6: $6,741.58\n   - Year 7: $6,910.58\n   - Year 8: $7,082.83\n   - Year 9: $7,259.42\n   - Year 10: $7,441.42\n\n4. **26 Thai8.3.23**:\n   - Months 1 \u2013 12: $20,595.00\n   - Months 13 \u2013 24: $21,109.88\n   - Months 25 \u2013 36: $21,638.48\n   - Months 37 \u2013 48: $22,180.82\n   - Months 49 \u2013 60: $22,736.88\n   - Months 61 \u2013 72: $23,306.68\n   - Months 73 \u2013 84: $23,890.20\n   - Months 85 \u2013 96: $24,487.46\n   - Months 97 \u2013 108: $25,098.44\n   - Months 109 \u2013 120: $25,726.59\n   - Months 121 \u2013 121.5: $26,368.47\n\nPlease note that the monthly rent varies depending on the lease year or month for each tenant.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Edge Cases",
+      "question": "When do leases expire?",
+      "answer": "Based on the provided lease document excerpts, the expiration dates for the leases are as follows:\n\n1. **Body 20**: The specific expiration date is not provided in the excerpt. The excerpt only discusses the obligations upon expiration or termination but does not specify when the lease term ends.\n\n2. **Clean Your Dirty Face**: The lease term is structured in months, with the initial term covering 123 months (10 years and 3 months). The lease includes two option terms, each for 5 years. However, the exact start date of the lease is not provided, so the precise expiration date cannot be determined from the excerpt alone.\n\n3. **Burdlife12.8.23**: The lease term is structured in months, with the initial term covering 121 months (10 years and 1 month). The lease includes two option terms, each for 5 years. Again, the exact start date of the lease is not provided, so the precise expiration date cannot be determined from the excerpt alone.\n\n4. **Pause Studio**: The excerpt provided does not contain any information regarding the lease term or expiration date.\n\nIn summary, the specific expiration dates for the leases cannot be determined from the provided excerpts, as they do not include start dates or specific end dates.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Edge Cases",
+      "question": "What are the renewal options?",
+      "answer": "Based on the provided lease document excerpts, the renewal options for each tenant are as follows:\n\n1. **Pause Studio:**\n   - **1st Renewal Option:** Months 124-129\n     - Annual Minimum Rent: $186,340.00\n     - Monthly Minimum Rent: $15,528.33\n   - **2nd Renewal Option:** Months 130-135\n     - Annual Minimum Rent: $204,960.00\n     - Monthly Minimum Rent: $17,080.00\n\n2. **Sugarcoat Beauty:**\n   - **1st Option Renewal:** Lease Years 11-15\n     - Annual Minimum Rent Per Square Foot starts at $73.91 and increases to $83.18 by Year 15.\n     - Annual Minimum Rent starts at $184,775.00 and increases to $207,950.00 by Year 15.\n     - Monthly Minimum Rent starts at $15,397.92 and increases to $17,329.17 by Year 15.\n   - **2nd Option Renewal:** Lease Years 16-20\n     - Annual Minimum Rent Per Square Foot starts at $85.68 and increases to $96.44 by Year 20.\n     - Annual Minimum Rent starts at $214,200.00 and increases to $241,100.00 by Year 20.\n     - Monthly Minimum Rent starts at $17,850.00 and increases to $20,091.67 by Year 20.\n\n3. **Drybar Lease - Medley:**\n   - **1st Option Renewal:** Lease Years 11-15\n     - Annual Minimum Rent Per Square Foot starts at $50.16 and increases to $56.45 by Year 15.\n     - Annual Minimum Rent starts at $85,873.92 and increases to $96,642.40 by Year 15.\n     - Monthly Minimum Rent starts at $7,156.16 and increases to $8,053.53 by Year 15.\n   - **2nd Option Renewal:** Lease Years 16-20\n     - Annual Minimum Rent Per Square Foot starts at $58.14 and increases to $65.44 by Year 20.\n     - Annual Minimum Rent starts at $99,535.68 and increases to $112,033.28 by Year 20.\n     - Monthly Minimum Rent starts at $8,294.64 and increases to $9,336.11 by Year 20.\n\nThese renewal options provide the tenants with the ability to extend their leases under specified terms for additional periods.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Edge Cases",
+      "question": "Show me lease information",
+      "answer": "Certainly! Here is the lease information based on the provided excerpts:\n\n### Burdlife12.8.23 Lease Information\n\n#### Rent Schedule\n- **Lease Years 1-12:** \n  - Sales Break Point: $1,800,000.00\n  - Annual Minimum Rent: $72,000.00\n  - Monthly Minimum Rent: $6,000.00\n  - Flat Rate Charge per Square Foot: $15.00\n\n- **Lease Years 13-24:**\n  - Sales Break Point: $1,800,000.00\n  - Annual Minimum Rent: $72,000.00\n  - Monthly Minimum Rent: $6,000.00\n  - Flat Rate Charge per Square Foot: $15.60\n\n- **Lease Years 25-36:**\n  - Sales Break Point: $1,845,000.00\n  - Annual Minimum Rent: $73,800.00\n  - Monthly Minimum Rent: $6,150.00\n  - Flat Rate Charge per Square Foot: $16.22\n\n- **Lease Years 37-48:**\n  - Sales Break Point: $1,891,200.00\n  - Annual Minimum Rent: $75,648.00\n  - Monthly Minimum Rent: $6,304.00\n  - Flat Rate Charge per Square Foot: $16.87\n\n- **Lease Years 49-60:**\n  - Sales Break Point: $1,938,600.00\n  - Annual Minimum Rent: $77,544.00\n  - Monthly Minimum Rent: $6,462.00\n  - Flat Rate Charge per Square Foot: $17.54\n\n- **Lease Years 61-72:**\n  - Sales Break Point: $1,987,200.00\n  - Annual Minimum Rent: $79,488.00\n  - Monthly Minimum Rent: $6,624.00\n  - Flat Rate Charge per Square Foot: $18.24\n\n- **Lease Years 73-84:**\n  - Sales Break Point: $2,037,000.00\n  - Annual Minimum Rent: $81,480.00\n  - Monthly Minimum Rent: $6,790.00\n  - Flat Rate Charge per Square Foot: $18.97\n\n- **Lease Years 85-96:**\n  - Sales Break Point: $2,088,000.00\n  - Annual Minimum Rent: $83,520.00\n  - Monthly Minimum Rent: $6,960.00\n  - Flat Rate Charge per Square Foot: $19.73\n\n- **Lease Years 97-108:**\n  - Sales Break Point: $2,140,200.00\n  - Annual Minimum Rent: $85,608.00\n  - Monthly Minimum Rent: $7,134.00\n  - Flat Rate Charge per Square Foot: $20.52\n\n- **Lease Years 109-121:**\n  - Sales Break Point: $2,193,600.00\n  - Annual Minimum Rent: $87,744.00\n  - Monthly Minimum Rent: $7,312.00\n  - Flat Rate Charge per Square Foot: $21.34\n\n#### Option Terms\n- **1st Option Term (Years 1-5):**\n  - Year 1: $2,248,500.00, $89,940.00 annual, $7,495.00 monthly, $22.19 per sq ft\n  - Year 2: $2,304,600.00, $92,184.00 annual, $7,682.00 monthly, $23.08 per sq ft\n  - Year 3: $2,362,200.00, $94,488.00 annual, $7,874.00 monthly, $24.00 per sq ft\n  - Year 4: $2,421,300.00, $96,852.00 annual, $8,071.00 monthly, $24.96 per sq ft\n  - Year 5: $2,481,900.00, $99,276.00 annual, $8,273.00 monthly, $25.96 per sq ft\n\n- **2nd Option Term (Years 6-10):**\n  - Year 6: $2,544,000.00, $101,760.00 annual, $8,480.00 monthly, $27.00 per sq ft\n  - Year 7: $2,607,600.00, $104,304.00 annual, $8,692.00 monthly, $28.08 per sq ft\n  - Year 8: $2,672,700.00, $",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Edge Cases",
+      "question": "Tell me everything about all tenants",
+      "answer": "Based on the provided lease document excerpts, here is the information about each tenant:\n\n1. **Five Daughters Bakery**\n   - **Premises**: Suite 2110, approximately 806 square feet.\n   - **Term**: Original term of ten (10) full Lease Years with one (1) renewal option of five (5) years.\n   - **Rent**: Minimum Rent to be adjusted based on actual GLA. Percentage Rent is 3% of Gross Sales exceeding specified Sales Break Points.\n   - **Security Deposit**: $7,611.33.\n   - **Prepaid Rent**: $5,977.83.\n   - **Taxes and Insurance**: Estimated at $4.25 and $0.75 per square foot, respectively, for the first Lease Year.\n   - **Promotion Fund**: $1.00 per square foot annually.\n   - **Use**: Operation of a bakery selling donuts, other bakery items, and coffee (incidental basis).\n   - **Brokers**: Franklin Street Real Estate Services, LLC.\n\n2. **Sugarcoat Beauty**\n   - **Premises**: Suite 4055, approximately 2,500 square feet, with an option to increase up to 3,000 square feet.\n   - **Term**: Original term of ten (10) full Lease Years with two (2) renewal options of five (5) years each.\n   - **Rent**: Minimum Rent to be adjusted based on actual GLA. Percentage Rent is 5% of Gross Sales exceeding specified Sales Break Points.\n   - **Security Deposit**: $24,258.34.\n   - **Prepaid Rent**: $18,491.67.\n   - **Taxes and Insurance**: Estimated at $4.25 and $0.75 per square foot, respectively, for the first Lease Year.\n   - **Promotion Fund**: $1.00 per square foot annually.\n   - **Use**: Operation of a beauty salon offering nail services as primary use, with incidental services like waxing and retail sales.\n   - **Brokers**: Franklin Street Real Estate Services, LLC.\n\n3. **AYA Med Spa**\n   - **Premises**: Suite 4060, approximately 1,500 square feet.\n   - **Term**: Original term of ten (10) full Lease Years.\n   - **Rent**: Minimum Rent increases by 3% per Lease Year. Percentage Rent is 5% of Gross Sales exceeding $3,000,000.\n   - **Security Deposit**: $11,470.00.\n   - **Prepaid Rent**: $9,375.00.\n   - **Taxes and Insurance**: Estimated at $4.25 and $0.75 per square foot, respectively, for the first Lease Year.\n   - **Promotion Fund**: $1.00 per square foot annually.\n   - **Use**: Not specified in the excerpt.\n   - **Brokers**: Not specified in the excerpt.\n\n4. **Kontour Medical Spa at Medley**\n   - **Premises**: Not specified in the excerpt.\n   - **Term**: Original term of ten (10) years and four (4) months.\n   - **Rent, Security Deposit, Prepaid Rent, Taxes, Insurance, Promotion Fund**: Not specified in the excerpt.\n   - **Use**: Not specified in the excerpt.\n   - **Brokers**: Franklin Street Real Estate Services, LLC.\n\n5. **STIR**\n   - **Co-Tenancy**: No co-tenancy clause; pays full rent regardless of other tenant occupancy levels.\n   - **Other details**: Not specified in the excerpt.\n\nThis summary includes all available information from the provided excerpts. If specific details are not mentioned, they are not available in the excerpts.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    },
+    {
+      "category": "Edge Cases",
+      "question": "What is the meaning of life?",
+      "answer": "The provided lease document excerpts do not contain any information related to the philosophical or existential question of \"What is the meaning of life?\" They focus solely on tenant improvement allowances and rent schedules for specific tenants within the Medley retail development. If you have questions about lease terms, rent amounts, or tenant obligations, I would be happy to assist with those.",
+      "num_sources": 5,
+      "success": true,
+      "error": null
+    }
+  ]
+}
