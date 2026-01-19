@@ -216,7 +216,9 @@ def render_chat():
                 )
 
             for message in st.session_state.messages:
-                with st.chat_message(message["role"]):
+                # Use proper avatars: user icon for user, AI icon for assistant
+                avatar = "👤" if message["role"] == "user" else "🤖"
+                with st.chat_message(message["role"], avatar=avatar):
                     st.markdown(message["content"])
 
         # Handle pending message from example buttons
@@ -243,11 +245,11 @@ def render_chat():
             st.session_state.messages.append({"role": "user", "content": prompt})
 
             with chat_container:
-                with st.chat_message("user"):
+                with st.chat_message("user", avatar="👤"):
                     st.markdown(prompt)
 
             with chat_container:
-                with st.chat_message("assistant"):
+                with st.chat_message("assistant", avatar="🤖"):
                     with st.spinner("Searching documents and generating response..."):
                         history = st.session_state.messages[:-1]
                         response = engine.chat(
@@ -535,10 +537,40 @@ def main():
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
     }
 
+    /* Chat Message Styling - Fix avatar display and layout */
     .stChatMessage {
         background-color: #1a1a1a !important;
         border-left: 3px solid #DC2626;
-        margin: 0.5rem 0;
+        margin: 0.5rem 0 !important;
+        padding: 0.75rem 1rem !important;
+        border-radius: 0.5rem;
+    }
+
+    /* Fix chat message avatar */
+    .stChatMessage [data-testid="chatAvatarIcon-user"],
+    .stChatMessage [data-testid="chatAvatarIcon-assistant"] {
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+        font-size: 1.5rem !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Compact chat container - keep above fold */
+    [data-testid="stChatMessageContainer"] {
+        max-height: 600px;
+        overflow-y: auto;
+        padding: 0.5rem;
+    }
+
+    /* Chat input stays at bottom */
+    [data-testid="stChatInput"] {
+        position: sticky;
+        bottom: 0;
+        background-color: #0a0a0a;
+        padding: 1rem 0;
+        z-index: 100;
     }
 
     .stTextInput > div > div > input {
