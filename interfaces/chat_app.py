@@ -199,6 +199,9 @@ def render_chat():
 
     # Main chat area
     with chat_col:
+        # Add scrollable wrapper with explicit ID for CSS targeting
+        st.markdown('<div id="chat-messages-wrapper">', unsafe_allow_html=True)
+
         chat_container = st.container()
 
         with chat_container:
@@ -213,6 +216,8 @@ def render_chat():
                 avatar = "👤" if message["role"] == "user" else "🤖"
                 with st.chat_message(message["role"], avatar=avatar):
                     st.markdown(message["content"])
+
+        st.markdown('</div>', unsafe_allow_html=True)
 
         # Handle pending message from example buttons
         if "pending_message" in st.session_state:
@@ -546,40 +551,37 @@ def main():
         justify-content: center !important;
     }
 
-    /* Compact chat container - keep above fold */
-    .main .block-container {
-        padding-top: 2rem;
-        padding-bottom: 1rem;
-        max-height: calc(100vh - 120px);
-        overflow-y: auto;
-    }
-
-    /* Chat messages container - limit height and add scroll */
-    section[data-testid="stVerticalBlock"] > div:has([data-testid="stChatMessageContainer"]) {
-        max-height: calc(100vh - 300px) !important;
+    /* CRITICAL: Chat messages wrapper - enforce fixed height */
+    #chat-messages-wrapper {
+        max-height: 500px !important;
+        height: 500px !important;
         overflow-y: auto !important;
-        padding-right: 0.5rem;
-        display: flex !important;
-        flex-direction: column !important;
+        overflow-x: hidden !important;
+        display: block !important;
+        margin-bottom: 1rem !important;
+        padding-right: 0.5rem !important;
+        border: 1px solid #333;
+        border-radius: 0.5rem;
+        padding: 1rem;
     }
 
-    /* Ensure chat message container doesn't grow beyond viewport */
-    [data-testid="stChatMessageContainer"] {
-        max-height: calc(100vh - 300px) !important;
-        overflow-y: auto !important;
-        flex-shrink: 0 !important;
+    /* Scrollbar styling for chat wrapper */
+    #chat-messages-wrapper::-webkit-scrollbar {
+        width: 8px;
     }
 
-    /* Make sure the main content area doesn't overflow */
-    .main .block-container {
-        max-height: 100vh !important;
-        overflow: hidden !important;
+    #chat-messages-wrapper::-webkit-scrollbar-track {
+        background: #1a1a1a;
+        border-radius: 4px;
     }
 
-    /* AI Chat tab content should scroll */
-    [data-testid="stVerticalBlock"] {
-        max-height: calc(100vh - 200px) !important;
-        overflow-y: auto !important;
+    #chat-messages-wrapper::-webkit-scrollbar-thumb {
+        background: #DC2626;
+        border-radius: 4px;
+    }
+
+    #chat-messages-wrapper::-webkit-scrollbar-thumb:hover {
+        background: #EF4444;
     }
 
     /* Fix expander arrow display - hide broken icon text */
@@ -592,36 +594,66 @@ def main():
         display: block !important;
     }
 
-    /* Hide ALL Streamlit arrow class text artifacts */
-    [class*="arrow"] {
+    /* CRITICAL: Hide ALL Streamlit arrow class text artifacts */
+    [class*="arrow"]::before,
+    [class*="arrow"]::after {
+        content: "" !important;
+        display: none !important;
+    }
+
+    /* Hide arrow text content */
+    [class*="arrow"]:not(svg):not(path) {
         font-size: 0 !important;
+        color: transparent !important;
+        text-indent: -9999px !important;
+        overflow: hidden !important;
+        width: 0 !important;
+        height: 0 !important;
     }
 
-    /* Restore icon size for actual icons */
-    [class*="arrow"] svg {
+    /* Restore icon size for actual SVG icons */
+    [class*="arrow"] svg,
+    [class*="arrow"] svg path {
         font-size: 1rem !important;
+        width: auto !important;
+        height: auto !important;
+        display: inline-block !important;
     }
 
-    /* Hide specific arrow text classes */
+    /* Explicitly hide every arrow text variant */
     .arrow_sources,
     .arrow_right,
     .arrow_left,
     .arrow_up,
     .arrow_down,
     .arrowlast_night,
-    .arrowlight {
+    .arrowlight,
+    .arrowforward,
+    .arrowback,
+    .arrow {
+        font-size: 0 !important;
+        color: transparent !important;
         display: none !important;
     }
 
-    /* Fix expander text visibility while hiding arrow text */
+    /* Fix expander - hide any text inside arrow elements */
+    [data-testid="stExpander"] [class*="arrow"] {
+        font-size: 0 !important;
+    }
+
+    /* Restore expander text visibility */
     [data-testid="stExpander"] summary {
         font-size: 1rem !important;
     }
 
-    /* Ensure expander label text shows correctly */
-    [data-testid="stExpander"] summary > div {
+    [data-testid="stExpander"] summary > div:not([class*="arrow"]) {
         font-size: 1rem !important;
         display: inline-block !important;
+    }
+
+    /* Nuclear option: hide all span elements that contain arrow classes */
+    span[class*="arrow"]:not(:has(svg)) {
+        display: none !important;
     }
 
     /* Chat input stays at bottom */
