@@ -23,6 +23,7 @@ from src.parsing.docx_parser import parse_all_leases
 from src.chunking.chunker import Chunker
 from src.metadata.extractor import extract_all_metadata
 from src.database.chroma_store import ChromaStore
+from src.data.structured_chunks import generate_all_structured_chunks
 
 
 console = Console()
@@ -119,7 +120,7 @@ def run_ingestion(
 
     console.print(f"\n  Total chunks: [green]{len(all_chunks)}[/green]")
 
-    # Step 4: Add to vector store
+    # Step 4: Add document chunks to vector store
     console.print("\n[bold]Step 4: Creating embeddings and storing in ChromaDB[/bold]")
 
     # Process in batches for progress tracking
@@ -130,6 +131,23 @@ def run_ingestion(
         batch_num = i // batch_size + 1
         console.print(f"  Processing batch {batch_num}/{total_batches}...")
         store.add_chunks(batch, show_progress=False)
+
+    # Step 5: Add structured data chunks (from dashboard data)
+    console.print("\n[bold]Step 5: Adding structured lease data[/bold]")
+    console.print("  Generating structured data chunks...")
+
+    structured_chunks = generate_all_structured_chunks()
+    console.print(f"  Generated [green]{len(structured_chunks)}[/green] structured chunks")
+
+    # Add structured chunks in batches
+    total_struct_batches = (len(structured_chunks) + batch_size - 1) // batch_size
+    for i in range(0, len(structured_chunks), batch_size):
+        batch = structured_chunks[i:i + batch_size]
+        batch_num = i // batch_size + 1
+        console.print(f"  Processing structured batch {batch_num}/{total_struct_batches}...")
+        store.add_chunks(batch, show_progress=False)
+
+    console.print(f"  Added structured data for all 29 tenants + portfolio summaries")
 
     # Final stats
     console.print("\n[bold green]Ingestion Complete![/bold green]")

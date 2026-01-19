@@ -15,3 +15,5 @@ from .lease_data import (
     calc_rent_for_year,
     get_summary_stats,
 )
+
+from .structured_chunks import generate_all_structured_chunks
