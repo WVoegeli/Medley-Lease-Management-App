@@ -1,0 +1,132 @@
+{
+  "description": "Recommended Claude Code plugins for Medley Lease Analysis & Management",
+  "version": "1.0.0",
+  "marketplaces": [
+    {
+      "name": "superpowers-marketplace",
+      "url": "obra/superpowers-marketplace",
+      "description": "Development methodology framework with TDD, planning, and systematic workflows",
+      "install_command": "/plugin marketplace add obra/superpowers-marketplace"
+    },
+    {
+      "name": "wshobson-agents",
+      "url": "wshobson/agents",
+      "description": "100+ specialized AI agents for software development",
+      "install_command": "/plugin marketplace add wshobson/agents"
+    }
+  ],
+  "recommended_plugins": [
+    {
+      "name": "superpowers",
+      "marketplace": "superpowers-marketplace",
+      "priority": "high",
+      "description": "Complete development workflow: brainstorming, planning, TDD, code review",
+      "install_command": "/plugin install superpowers@superpowers-marketplace",
+      "features": [
+        "/superpowers:brainstorm - Interactive design refinement",
+        "/superpowers:write-plan - Create implementation plans",
+        "/superpowers:execute-plan - Execute plans in batches",
+        "test-driven-development - RED-GREEN-REFACTOR cycle",
+        "systematic-debugging - 4-phase root cause analysis"
+      ]
+    },
+    {
+      "name": "python-development",
+      "marketplace": "wshobson/agents",
+      "priority": "high",
+      "description": "Python experts with 5 specialized skills (async, testing, packaging, performance, UV)",
+      "install_command": "/plugin install python-development@wshobson/agents",
+      "agents": ["python-pro", "django-pro", "fastapi-pro"],
+      "skills": [
+        "async-python-patterns",
+        "python-testing-patterns",
+        "python-packaging",
+        "python-performance",
+        "uv-package-manager"
+      ]
+    },
+    {
+      "name": "llm-applications",
+      "marketplace": "wshobson/agents",
+      "priority": "high",
+      "description": "RAG system optimization and LLM application development",
+      "install_command": "/plugin install llm-applications@wshobson/agents",
+      "agents": ["langchain-expert", "rag-architect"],
+      "skills": [
+        "langchain-patterns",
+        "prompt-engineering",
+        "rag-optimization",
+        "llm-evaluation"
+      ]
+    },
+    {
+      "name": "testing-automation",
+      "marketplace": "wshobson/agents",
+      "priority": "medium",
+      "description": "Test generation and TDD workflows",
+      "install_command": "/plugin install testing-automation@wshobson/agents",
+      "agents": ["test-automator"],
+      "features": ["Test generation", "TDD workflows", "Coverage analysis"]
+    },
+    {
+      "name": "comprehensive-review",
+      "marketplace": "wshobson/agents",
+      "priority": "medium",
+      "description": "Multi-agent code review (architecture + code + security)",
+      "install_command": "/plugin install comprehensive-review@wshobson/agents",
+      "agents": ["architect-review", "code-reviewer", "security-auditor"]
+    },
+    {
+      "name": "code-documentation",
+      "marketplace": "wshobson/agents",
+      "priority": "medium",
+      "description": "Auto-generate API docs and docstrings",
+      "install_command": "/plugin install code-documentation@wshobson/agents",
+      "agents": ["docs-generator"]
+    },
+    {
+      "name": "database-design",
+      "marketplace": "wshobson/agents",
+      "priority": "medium",
+      "description": "Database schema design and optimization",
+      "install_command": "/plugin install database-design@wshobson/agents",
+      "agents": ["database-architect"]
+    },
+    {
+      "name": "data-engineering",
+      "marketplace": "wshobson/agents",
+      "priority": "low",
+      "description": "Data pipeline and ETL development",
+      "install_command": "/plugin install data-engineering@wshobson/agents",
+      "agents": ["data-engineer"]
+    },
+    {
+      "name": "security-scanning",
+      "marketplace": "wshobson/agents",
+      "priority": "low",
+      "description": "SAST security scanning",
+      "install_command": "/plugin install security-scanning@wshobson/agents",
+      "agents": ["security-scanner"]
+    },
+    {
+      "name": "observability",
+      "marketplace": "wshobson/agents",
+      "priority": "low",
+      "description": "Monitoring and logging setup",
+      "install_command": "/plugin install observability@wshobson/agents",
+      "agents": ["observability-engineer"]
+    }
+  ],
+  "quick_install": {
+    "description": "Install all high-priority plugins",
+    "commands": [
+      "/plugin marketplace add obra/superpowers-marketplace",
+      "/plugin marketplace add wshobson/agents",
+      "/plugin install superpowers@superpowers-marketplace",
+      "/plugin install python-development@wshobson/agents",
+      "/plugin install llm-applications@wshobson/agents",
+      "/plugin install testing-automation@wshobson/agents",
+      "/plugin install comprehensive-review@wshobson/agents"
+    ]
+  }
+}

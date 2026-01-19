@@ -19,6 +19,36 @@ Compatible with Claude Code, Cursor, Windsurf, Copilot, and other AI development
 - **Export & Reporting**: PDF reports, Excel workbooks, CSV exports
 - **Testing Infrastructure**: Comprehensive pytest suite for reliability
 
+## 🤖 Recommended AI Agents & Plugins
+
+**For team members using Claude Code or compatible AI tools:**
+
+This project has a curated set of recommended plugins and agents that enhance development productivity. See **[PLUGINS.md](PLUGINS.md)** for detailed setup instructions.
+
+### Quick Install (5 essential plugins)
+```bash
+# 1. Add marketplaces
+/plugin marketplace add obra/superpowers-marketplace
+/plugin marketplace add wshobson/agents
+
+# 2. Install high-priority plugins
+/plugin install superpowers@superpowers-marketplace
+/plugin install python-development@wshobson/agents
+/plugin install llm-applications@wshobson/agents
+/plugin install testing-automation@wshobson/agents
+/plugin install comprehensive-review@wshobson/agents
+```
+
+**Key Plugins:**
+- **Superpowers**: Development methodology (brainstorming, planning, TDD)
+- **Python Development**: FastAPI and async Python expertise
+- **LLM Applications**: RAG system optimization
+- **Testing Automation**: Test generation and coverage
+- **Comprehensive Review**: Multi-agent code review
+
+**Configuration:** See `.claude/recommended-plugins.json` for complete list.
+**Full Documentation:** [PLUGINS.md](PLUGINS.md)
+
 ## Commands
 
 ### Setup
