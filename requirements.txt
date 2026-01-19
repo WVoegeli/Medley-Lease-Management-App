@@ -1,0 +1,27 @@
+# Medley Lease Management RAG System - Dependencies
+
+# Document parsing
+python-docx>=0.8.11
+
+# Vector database
+chromadb>=0.4.22
+
+# AI/ML
+openai>=1.12.0
+anthropic>=0.18.0
+tiktoken>=0.5.2
+
+# Search
+rank-bm25>=0.2.2
+
+# Web UI
+streamlit>=1.31.0
+
+# Configuration
+python-dotenv>=1.0.0
+
+# CLI formatting
+rich>=13.7.0
+
+# Utilities
+tqdm>=4.66.0
