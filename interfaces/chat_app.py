@@ -165,6 +165,13 @@ def render_chat():
         # Show sources toggle
         show_sources = st.toggle("Show sources", value=True)
 
+        # Dark mode toggle
+        dark_mode = st.toggle("🌙 Dark Mode", value=st.session_state.dark_mode)
+
+        if dark_mode != st.session_state.dark_mode:
+            st.session_state.dark_mode = dark_mode
+            st.rerun()
+
         st.divider()
 
         # Stats
@@ -493,6 +500,82 @@ def render_critical_dates():
 def main():
     if not check_password():
         return
+
+    # Initialize dark mode state
+    if "dark_mode" not in st.session_state:
+        st.session_state.dark_mode = False
+
+    # Apply dark mode CSS globally if enabled
+    if st.session_state.dark_mode:
+        st.markdown("""
+        <style>
+        /* Dark mode styles */
+        :root {
+            --background-color: #0E1117;
+            --secondary-background-color: #262730;
+            --text-color: #FAFAFA;
+            --primary-color: #4A9EFF;
+        }
+
+        .stApp {
+            background-color: #0E1117;
+            color: #FAFAFA;
+        }
+
+        .stChatMessage {
+            background-color: #262730 !important;
+        }
+
+        .stTextInput > div > div > input {
+            background-color: #262730;
+            color: #FAFAFA;
+        }
+
+        .stSelectbox > div > div > div {
+            background-color: #262730;
+            color: #FAFAFA;
+        }
+
+        .stMetric {
+            background-color: #262730;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .stDataFrame {
+            background-color: #262730;
+        }
+
+        [data-testid="stMarkdownContainer"] {
+            color: #FAFAFA;
+        }
+
+        .stButton > button {
+            background-color: #262730;
+            color: #FAFAFA;
+            border: 1px solid #4A9EFF;
+        }
+
+        .stButton > button:hover {
+            background-color: #4A9EFF;
+            color: #FFFFFF;
+            border: 1px solid #4A9EFF;
+        }
+
+        .stTabs [data-baseweb="tab-list"] {
+            background-color: #262730;
+        }
+
+        .stTabs [data-baseweb="tab"] {
+            color: #FAFAFA;
+        }
+
+        div[data-testid="stExpander"] {
+            background-color: #262730;
+            border: 1px solid #4A9EFF;
+        }
+        </style>
+        """, unsafe_allow_html=True)
 
     # Header
     stats = get_summary_stats()
