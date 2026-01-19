@@ -556,9 +556,30 @@ def main():
 
     /* Chat messages container - limit height and add scroll */
     section[data-testid="stVerticalBlock"] > div:has([data-testid="stChatMessageContainer"]) {
-        max-height: calc(100vh - 250px) !important;
+        max-height: calc(100vh - 300px) !important;
         overflow-y: auto !important;
         padding-right: 0.5rem;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* Ensure chat message container doesn't grow beyond viewport */
+    [data-testid="stChatMessageContainer"] {
+        max-height: calc(100vh - 300px) !important;
+        overflow-y: auto !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* Make sure the main content area doesn't overflow */
+    .main .block-container {
+        max-height: 100vh !important;
+        overflow: hidden !important;
+    }
+
+    /* AI Chat tab content should scroll */
+    [data-testid="stVerticalBlock"] {
+        max-height: calc(100vh - 200px) !important;
+        overflow-y: auto !important;
     }
 
     /* Fix expander arrow display - hide broken icon text */
@@ -571,9 +592,36 @@ def main():
         display: block !important;
     }
 
-    /* Hide any stray arrow class text */
-    .arrow_sources {
+    /* Hide ALL Streamlit arrow class text artifacts */
+    [class*="arrow"] {
+        font-size: 0 !important;
+    }
+
+    /* Restore icon size for actual icons */
+    [class*="arrow"] svg {
+        font-size: 1rem !important;
+    }
+
+    /* Hide specific arrow text classes */
+    .arrow_sources,
+    .arrow_right,
+    .arrow_left,
+    .arrow_up,
+    .arrow_down,
+    .arrowlast_night,
+    .arrowlight {
         display: none !important;
+    }
+
+    /* Fix expander text visibility while hiding arrow text */
+    [data-testid="stExpander"] summary {
+        font-size: 1rem !important;
+    }
+
+    /* Ensure expander label text shows correctly */
+    [data-testid="stExpander"] summary > div {
+        font-size: 1rem !important;
+        display: inline-block !important;
     }
 
     /* Chat input stays at bottom */
