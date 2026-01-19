@@ -165,13 +165,6 @@ def render_chat():
         # Show sources toggle
         show_sources = st.toggle("Show sources", value=True)
 
-        # Dark mode toggle
-        dark_mode = st.toggle("🌙 Dark Mode", value=st.session_state.dark_mode)
-
-        if dark_mode != st.session_state.dark_mode:
-            st.session_state.dark_mode = dark_mode
-            st.rerun()
-
         st.divider()
 
         # Stats
@@ -503,10 +496,6 @@ def main():
     if not check_password():
         return
 
-    # Initialize dark mode state
-    if "dark_mode" not in st.session_state:
-        st.session_state.dark_mode = False
-
     # Toro Development Company Branding & Mobile Optimization
     st.markdown("""
     <style>
@@ -558,10 +547,33 @@ def main():
     }
 
     /* Compact chat container - keep above fold */
-    [data-testid="stChatMessageContainer"] {
-        max-height: 600px;
+    .main .block-container {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        max-height: calc(100vh - 120px);
         overflow-y: auto;
-        padding: 0.5rem;
+    }
+
+    /* Chat messages container - limit height and add scroll */
+    section[data-testid="stVerticalBlock"] > div:has([data-testid="stChatMessageContainer"]) {
+        max-height: calc(100vh - 250px) !important;
+        overflow-y: auto !important;
+        padding-right: 0.5rem;
+    }
+
+    /* Fix expander arrow display - hide broken icon text */
+    [data-testid="stExpander"] details summary::before {
+        content: "" !important;
+    }
+
+    /* Fix expander icon */
+    [data-testid="stExpander"] details summary svg {
+        display: block !important;
+    }
+
+    /* Hide any stray arrow class text */
+    .arrow_sources {
+        display: none !important;
     }
 
     /* Chat input stays at bottom */
@@ -571,6 +583,7 @@ def main():
         background-color: #0a0a0a;
         padding: 1rem 0;
         z-index: 100;
+        border-top: 1px solid #333;
     }
 
     .stTextInput > div > div > input {
