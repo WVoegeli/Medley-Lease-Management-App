@@ -505,77 +505,194 @@ def main():
     if "dark_mode" not in st.session_state:
         st.session_state.dark_mode = False
 
-    # Apply dark mode CSS globally if enabled
-    if st.session_state.dark_mode:
-        st.markdown("""
-        <style>
-        /* Dark mode styles */
-        :root {
-            --background-color: #0E1117;
-            --secondary-background-color: #262730;
-            --text-color: #FAFAFA;
-            --primary-color: #4A9EFF;
-        }
+    # Toro Development Company Branding & Mobile Optimization
+    st.markdown("""
+    <style>
+    /* Import professional serif font for headings */
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;600&display=swap');
 
+    /* Toro Dark Theme */
+    :root {
+        --background-color: #0a0a0a;
+        --secondary-background-color: #1a1a1a;
+        --text-color: #FAFAFA;
+        --primary-color: #DC2626;
+    }
+
+    .stApp {
+        background-color: #0a0a0a;
+        color: #FAFAFA;
+    }
+
+    /* Typography - Toro Style */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Merriweather', Georgia, serif !important;
+        font-weight: 400;
+        color: #FAFAFA;
+    }
+
+    p, div, span, label {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    }
+
+    .stChatMessage {
+        background-color: #1a1a1a !important;
+        border-left: 3px solid #DC2626;
+        margin: 0.5rem 0;
+    }
+
+    .stTextInput > div > div > input {
+        background-color: #1a1a1a;
+        color: #FAFAFA;
+        border: 1px solid #333;
+    }
+
+    .stTextInput > div > div > input:focus {
+        border-color: #DC2626;
+        box-shadow: 0 0 0 1px #DC2626;
+    }
+
+    .stSelectbox > div > div > div {
+        background-color: #1a1a1a;
+        color: #FAFAFA;
+        border: 1px solid #333;
+    }
+
+    .stMetric {
+        background-color: #1a1a1a;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border: 1px solid #333;
+    }
+
+    .stDataFrame {
+        background-color: #1a1a1a;
+    }
+
+    [data-testid="stMarkdownContainer"] {
+        color: #FAFAFA;
+    }
+
+    .stButton > button {
+        background-color: #1a1a1a;
+        color: #FAFAFA;
+        border: 1px solid #DC2626;
+        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .stButton > button:hover {
+        background-color: #DC2626;
+        color: #FFFFFF;
+        border: 1px solid #DC2626;
+        transform: translateY(-1px);
+    }
+
+    .stTabs [data-baseweb="tab-list"] {
+        background-color: #1a1a1a;
+        gap: 0.5rem;
+    }
+
+    .stTabs [data-baseweb="tab"] {
+        color: #FAFAFA;
+        border-bottom: 2px solid transparent;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .stTabs [data-baseweb="tab"][aria-selected="true"] {
+        color: #DC2626;
+        border-bottom: 2px solid #DC2626;
+        font-weight: 600;
+    }
+
+    div[data-testid="stExpander"] {
+        background-color: #1a1a1a;
+        border: 1px solid #DC2626;
+    }
+
+    /* Mobile Optimization */
+    @media (max-width: 768px) {
         .stApp {
-            background-color: #0E1117;
-            color: #FAFAFA;
+            padding: 0.5rem !important;
         }
 
-        .stChatMessage {
-            background-color: #262730 !important;
+        h1 {
+            font-size: 1.5rem !important;
         }
 
-        .stTextInput > div > div > input {
-            background-color: #262730;
-            color: #FAFAFA;
+        h2 {
+            font-size: 1.25rem !important;
         }
 
-        .stSelectbox > div > div > div {
-            background-color: #262730;
-            color: #FAFAFA;
-        }
-
-        .stMetric {
-            background-color: #262730;
-            padding: 1rem;
-            border-radius: 0.5rem;
-        }
-
-        .stDataFrame {
-            background-color: #262730;
-        }
-
-        [data-testid="stMarkdownContainer"] {
-            color: #FAFAFA;
+        h3 {
+            font-size: 1.1rem !important;
         }
 
         .stButton > button {
-            background-color: #262730;
-            color: #FAFAFA;
-            border: 1px solid #4A9EFF;
-        }
-
-        .stButton > button:hover {
-            background-color: #4A9EFF;
-            color: #FFFFFF;
-            border: 1px solid #4A9EFF;
+            width: 100%;
+            margin: 0.25rem 0;
         }
 
         .stTabs [data-baseweb="tab-list"] {
-            background-color: #262730;
+            flex-wrap: wrap;
+            gap: 0.25rem;
         }
 
         .stTabs [data-baseweb="tab"] {
-            color: #FAFAFA;
+            font-size: 0.9rem;
+            padding: 0.5rem;
         }
 
-        div[data-testid="stExpander"] {
-            background-color: #262730;
-            border: 1px solid #4A9EFF;
+        .stMetric {
+            padding: 0.5rem;
         }
-        </style>
-        """, unsafe_allow_html=True)
+
+        .stChatMessage {
+            padding: 0.5rem;
+        }
+
+        [data-testid="stSidebar"] {
+            width: 100% !important;
+        }
+    }
+
+    /* Tablet Optimization */
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .stApp {
+            padding: 1rem;
+        }
+
+        .stTabs [data-baseweb="tab-list"] {
+            gap: 1rem;
+        }
+    }
+
+    /* Touch-friendly targets for mobile devices */
+    @media (hover: none) and (pointer: coarse) {
+        .stButton > button {
+            min-height: 44px;
+            padding: 0.75rem 1rem;
+        }
+
+        .stTabs [data-baseweb="tab"] {
+            min-height: 44px;
+            padding: 0.75rem;
+        }
+
+        input, select, textarea {
+            min-height: 44px;
+        }
+    }
+
+    /* Responsive tables */
+    @media (max-width: 768px) {
+        .stDataFrame {
+            overflow-x: auto;
+            font-size: 0.85rem;
+        }
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
     # Header
     stats = get_summary_stats()
