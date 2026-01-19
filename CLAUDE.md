@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-RAG (Retrieval-Augmented Generation) system for querying commercial lease agreements at the Medley retail development. Parses DOCX lease documents, creates embeddings, and enables natural language Q&A with hybrid search.
+**Medley Lease Analysis & Management** - RAG (Retrieval-Augmented Generation) system for querying commercial lease agreements at the Medley retail development. Parses DOCX lease documents, creates embeddings, and enables natural language Q&A with hybrid search.
 
 ## Commands
 
@@ -94,6 +94,13 @@ Search tuning (`config/settings.py`):
 
 - Lease documents: `Lease Contracts/` (DOCX files)
 - Vector database: `data/chroma_db/`
+
+### Theme & Dark Mode
+
+Streamlit theme configuration (`.streamlit/config.toml`):
+- **Light theme** (default) - Configured in `config.toml`
+- **Dark theme** - Users can toggle in app: Click ⋮ (top right) → Settings → Theme
+- **Permanent dark mode** - Use `config_dark.toml` as reference or uncomment dark theme lines in `config.toml`
 
 ## Windows Notes
 

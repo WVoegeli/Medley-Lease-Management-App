@@ -526,7 +526,7 @@ def render_critical_dates():
 def main():
     """Main dashboard application."""
     st.set_page_config(
-        page_title="Medley Lease Dashboard",
+        page_title="Medley Lease Analysis & Management",
         page_icon="🏢",
         layout="wide",
     )

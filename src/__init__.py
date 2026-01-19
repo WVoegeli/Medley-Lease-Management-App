@@ -1,5 +1,5 @@
 """
-Medley Lease Management RAG System
+Medley Lease Analysis & Management RAG System
 """
 
 __version__ = "1.0.0"

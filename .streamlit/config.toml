@@ -1,8 +1,23 @@
 [theme]
+# Light theme (default)
+# Users can switch themes in the app: Click ⋮ (top right) → Settings → Theme
+# Choose: Light, Dark, or Use system setting
 primaryColor = "#1E88E5"
 backgroundColor = "#FFFFFF"
 secondaryBackgroundColor = "#F5F5F5"
 textColor = "#212121"
+font = "sans serif"
+
+# For permanent dark mode:
+# 1. Uncomment the lines below and comment out the light theme lines above
+# 2. Or use config_dark.toml as a reference
+
+# Dark theme
+# primaryColor = "#4A9EFF"
+# backgroundColor = "#0E1117"
+# secondaryBackgroundColor = "#262730"
+# textColor = "#FAFAFA"
+# font = "sans serif"
 
 [server]
 headless = true

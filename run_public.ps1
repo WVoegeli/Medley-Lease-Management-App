@@ -1,4 +1,4 @@
-# Medley Lease Management - Public URL Launcher
+# Medley Lease Analysis & Management - Public URL Launcher
 # This script starts the Streamlit app and creates a public ngrok tunnel
 
 param(
@@ -7,7 +7,8 @@ param(
 )
 
 Write-Host "============================================" -ForegroundColor Cyan
-Write-Host "  Medley Lease Management - Public Access" -ForegroundColor Cyan
+Write-Host "  Medley Lease Analysis & Management" -ForegroundColor Cyan
+Write-Host "  Public Access" -ForegroundColor Cyan
 Write-Host "============================================" -ForegroundColor Cyan
 Write-Host ""
 

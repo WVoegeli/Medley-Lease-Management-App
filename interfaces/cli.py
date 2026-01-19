@@ -22,7 +22,7 @@ console = Console()
 def print_welcome():
     """Print welcome message"""
     welcome_text = """
-[bold blue]Medley Lease Management System[/bold blue]
+[bold blue]Medley Lease Analysis & Management System[/bold blue]
 [dim]Query your lease agreements using natural language[/dim]
 
 Commands:

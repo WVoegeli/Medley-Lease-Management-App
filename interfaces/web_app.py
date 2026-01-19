@@ -1,5 +1,5 @@
 """
-Streamlit web interface for Medley Lease Management System
+Streamlit web interface for Medley Lease Analysis & Management System
 """
 
 import sys
@@ -14,7 +14,7 @@ from src.search.query_engine import QueryEngine
 
 # Page config
 st.set_page_config(
-    page_title="Medley Lease Management",
+    page_title="Medley Lease Analysis & Management",
     page_icon="🏢",
     layout="wide"
 )
@@ -28,7 +28,7 @@ def get_query_engine():
 
 def main():
     # Header
-    st.title("🏢 Medley Lease Management System")
+    st.title("🏢 Medley Lease Analysis & Management")
     st.markdown("*Query your lease agreements using natural language*")
 
     # Initialize engine

@@ -1,0 +1,14 @@
+[theme]
+# Dark theme configuration
+# To use this theme, rename this file to 'config.toml' (backup the original first)
+# Or copy these settings into the [theme] section of config.toml
+primaryColor = "#4A9EFF"
+backgroundColor = "#0E1117"
+secondaryBackgroundColor = "#262730"
+textColor = "#FAFAFA"
+font = "sans serif"
+
+[server]
+headless = true
+enableCORS = false
+enableXsrfProtection = true

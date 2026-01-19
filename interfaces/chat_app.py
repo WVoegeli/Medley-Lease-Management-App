@@ -1,5 +1,5 @@
 """
-Medley Lease Management System - Combined Chat & Dashboard Interface
+Medley Lease Analysis & Management System - Combined Chat & Dashboard Interface
 """
 
 import sys
@@ -34,7 +34,7 @@ except ImportError:
 
 # Page config - must be first Streamlit command
 st.set_page_config(
-    page_title="Medley Lease Management",
+    page_title="Medley Lease Analysis & Management",
     page_icon="🏢",
     layout="wide"
 )
@@ -58,7 +58,7 @@ def check_password():
         return True
 
     # Show login form
-    st.title("🔐 Medley Lease Management")
+    st.title("🔐 Medley Lease Analysis & Management")
     st.markdown("Please enter the password to access the application.")
 
     password = st.text_input("Password", type="password", key="password_input")

@@ -2,7 +2,8 @@
 setlocal
 
 echo ============================================
-echo   Medley Lease Management - Public Access
+echo   Medley Lease Analysis ^& Management
+echo   Public Access
 echo ============================================
 echo.
 

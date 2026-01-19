@@ -1,5 +1,5 @@
 """
-Configuration settings for Medley Lease Management RAG System
+Configuration settings for Medley Lease Analysis & Management RAG System
 """
 
 import os
