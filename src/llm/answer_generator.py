@@ -258,6 +258,66 @@ My question: {message}"""
         )
         return response.content[0].text
 
+    def reformulate_query(
+        self,
+        message: str,
+        conversation_history: List[Dict[str, str]],
+        max_tokens: int = 100
+    ) -> str:
+        """
+        Reformulate a vague follow-up question into a complete, standalone question
+
+        Args:
+            message: Current user message (may be vague like "what about per month?")
+            conversation_history: Recent conversation history
+            max_tokens: Maximum tokens for reformulation
+
+        Returns:
+            Reformulated complete question that can be searched independently
+        """
+        if not conversation_history:
+            return message
+
+        # Build recent history (last 2-3 turns)
+        recent_history = conversation_history[-(min(6, len(conversation_history))):]
+        history_str = "\n".join([
+            f"{msg['role'].capitalize()}: {msg['content'][:200]}"
+            for msg in recent_history
+        ])
+
+        prompt = f"""Given this conversation history, reformulate the user's latest message into a complete, standalone question that includes all necessary context (like tenant names, specific topics, etc.).
+
+Conversation History:
+{history_str}
+
+Latest User Message: {message}
+
+Reformulated Complete Question:"""
+
+        if self.provider == "openai":
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {"role": "system", "content": "You reformulate vague follow-up questions into complete, searchable questions by adding context from conversation history. Output only the reformulated question, nothing else."},
+                    {"role": "user", "content": prompt}
+                ],
+                max_tokens=max_tokens,
+                temperature=0.1
+            )
+            reformulated = response.choices[0].message.content.strip()
+        else:
+            response = self.client.messages.create(
+                model=self.model,
+                max_tokens=max_tokens,
+                system="You reformulate vague follow-up questions into complete, searchable questions by adding context from conversation history. Output only the reformulated question, nothing else.",
+                messages=[
+                    {"role": "user", "content": prompt}
+                ]
+            )
+            reformulated = response.content[0].text.strip()
+
+        return reformulated
+
     def generate_comparison(
         self,
         question: str,

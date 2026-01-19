@@ -186,9 +186,18 @@ class QueryEngine:
         if tenant_filter:
             where = {"tenant_name": tenant_filter}
 
-        # Search for relevant chunks based on current message
+        # Reformulate vague follow-up questions into complete, searchable questions
+        # This ensures search works even for messages like "what about per month?"
+        search_query = message
+        if conversation_history:
+            search_query = self.answer_generator.reformulate_query(
+                message=message,
+                conversation_history=conversation_history
+            )
+
+        # Search for relevant chunks using the reformulated query
         search_results = self.ranker.search(
-            query=message,
+            query=search_query,
             n_results=n_results,
             where=where
         )
