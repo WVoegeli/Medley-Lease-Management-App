@@ -16,6 +16,14 @@ import pandas as pd
 # Import chat components
 from src.search.query_engine import QueryEngine
 
+# Import agent framework
+from src.agents import (
+    AgentRouter,
+    AgentContext,
+    AgentResponse,
+    create_default_agents,
+)
+
 # Import dashboard components
 from src.data.lease_data import (
     LEASE_DATA,
@@ -99,6 +107,27 @@ def get_query_engine():
     return QueryEngine()
 
 
+@st.cache_resource
+def get_agent_router(_query_engine):
+    """Initialize and cache the agent router with all specialized agents."""
+    from src.database.sql_store import SQLStore
+
+    try:
+        sql_store = SQLStore()
+    except Exception:
+        sql_store = None
+
+    agents = create_default_agents(
+        query_engine=_query_engine,
+        sql_store=sql_store
+    )
+    return AgentRouter(
+        agents=agents,
+        query_engine=_query_engine,
+        confidence_threshold=0.6
+    )
+
+
 def initialize_chat_state():
     """Initialize chat session state variables"""
     if "messages" not in st.session_state:
@@ -111,15 +140,53 @@ def clear_conversation():
     """Clear the conversation history"""
     st.session_state.messages = []
     st.session_state.sources = []
+    if "last_agent" in st.session_state:
+        del st.session_state.last_agent
+
+
+def process_message(router, engine, message, history, num_results, tenant_filter):
+    """
+    Process a message through the agent router or fall back to RAG.
+
+    Returns:
+        tuple: (answer_text, sources_list, agent_name)
+    """
+    # Build context for agent routing
+    context = AgentContext(
+        conversation_history=history,
+        tenant_filter=tenant_filter
+    )
+
+    # Try routing to an agent
+    routing_result = router.route(message, context)
+
+    if routing_result.agent and not routing_result.fallback_to_rag:
+        # Agent can handle this query
+        agent_response = routing_result.agent.execute(message, context)
+        return (
+            agent_response.message,
+            agent_response.sources if agent_response.sources else [],
+            routing_result.agent.name
+        )
+
+    # Fall back to standard RAG
+    response = engine.chat(
+        message=message,
+        conversation_history=history,
+        n_results=num_results,
+        tenant_filter=tenant_filter
+    )
+    return (response.answer, response.sources, "RAG")
 
 
 def render_chat():
     """Render the Chat interface."""
     initialize_chat_state()
 
-    # Initialize engine
+    # Initialize engine and agent router
     try:
         engine = get_query_engine()
+        router = get_agent_router(engine)
         stats = engine.get_stats()
     except Exception as e:
         st.error(f"Error initializing RAG engine: {e}")
@@ -174,6 +241,20 @@ def render_chat():
 
         st.divider()
 
+        # Agent Status
+        st.markdown("#### Specialized Agents")
+        agent_icons = {
+            "FinancialAnalystAgent": "💰",
+            "RiskAssessorAgent": "⚠️",
+            "LeaseIngestorAgent": "📄",
+        }
+        for agent_info in router.list_agents():
+            icon = agent_icons.get(agent_info["name"], "🤖")
+            st.markdown(f"{icon} **{agent_info['name'].replace('Agent', '')}**")
+            st.caption(agent_info["description"][:50] + "..." if len(agent_info["description"]) > 50 else agent_info["description"])
+
+        st.divider()
+
         # Example questions
         st.markdown("#### Try asking")
         example_questions = [
@@ -221,16 +302,19 @@ def render_chat():
 
             st.session_state.messages.append({"role": "user", "content": pending})
 
-            with st.spinner("Searching documents..."):
-                response = engine.chat(
+            with st.spinner("Processing..."):
+                answer, sources, agent_name = process_message(
+                    router=router,
+                    engine=engine,
                     message=pending,
-                    conversation_history=st.session_state.messages[:-1],
-                    n_results=num_results,
+                    history=st.session_state.messages[:-1],
+                    num_results=num_results,
                     tenant_filter=tenant_filter
                 )
 
-            st.session_state.messages.append({"role": "assistant", "content": response.answer})
-            st.session_state.sources = response.sources
+            st.session_state.messages.append({"role": "assistant", "content": answer})
+            st.session_state.sources = sources
+            st.session_state.last_agent = agent_name
             st.rerun()
 
         # Chat input
@@ -243,25 +327,31 @@ def render_chat():
 
             with chat_container:
                 with st.chat_message("assistant", avatar="🤖"):
-                    with st.spinner("Searching documents and generating response..."):
+                    with st.spinner("Processing your question..."):
                         history = st.session_state.messages[:-1]
-                        response = engine.chat(
+                        answer, sources, agent_name = process_message(
+                            router=router,
+                            engine=engine,
                             message=prompt,
-                            conversation_history=history,
-                            n_results=num_results,
+                            history=history,
+                            num_results=num_results,
                             tenant_filter=tenant_filter
                         )
-                    st.markdown(response.answer)
+                    st.markdown(answer)
+                    # Show agent badge
+                    if agent_name and agent_name != "RAG":
+                        st.caption(f"🤖 Handled by: {agent_name}")
 
-            st.session_state.messages.append({"role": "assistant", "content": response.answer})
-            st.session_state.sources = response.sources
+            st.session_state.messages.append({"role": "assistant", "content": answer})
+            st.session_state.sources = sources
+            st.session_state.last_agent = agent_name
 
-            if show_sources and response.sources:
+            if show_sources and sources:
                 with st.expander("📚 Sources used for this response"):
-                    for i, source in enumerate(response.sources, 1):
-                        st.markdown(f"**{i}. {source['tenant']} - {source['section']}**")
-                        st.caption(f"Score: {source['score']:.3f}")
-                        st.text(source['content'][:300] + "...")
+                    for i, source in enumerate(sources, 1):
+                        st.markdown(f"**{i}. {source.get('tenant', 'Unknown')} - {source.get('section', 'Unknown')}**")
+                        st.caption(f"Score: {source.get('score', 0):.3f}")
+                        st.text(source.get('content', '')[:300] + "...")
                         st.divider()
 
 
