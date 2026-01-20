@@ -212,6 +212,83 @@ Analytical dashboard with visualizations, metrics, and export capabilities.
 - Coverage for database operations, analytics, and query engine
 - Run with: `pytest --cov=src tests/`
 
+## AI Development Tools
+
+This project is configured with a comprehensive AI development stack. See `.mcp.json` and `.claude/settings.json` for full configuration.
+
+### MCP Servers (9 Configured)
+
+| MCP Server | Purpose | Key Capabilities |
+|------------|---------|------------------|
+| **context7** | Library documentation | Query up-to-date docs for any library |
+| **perplexity** | Web search & research | Search, reasoning, deep research |
+| **linear** | Issue tracking | Create/manage issues and tasks |
+| **github** | Repository management | PRs, issues, commits, branches |
+| **vibe-check** | Metacognition | Question assumptions, track patterns |
+| **semgrep** | Security scanning | SAST analysis, vulnerability detection |
+| **git** | Git operations | Status, diff, commit, branch, log |
+| **pieces** | Code snippets | Save and retrieve code snippets |
+| **serena** | Semantic code analysis | Symbol-level editing, code navigation |
+
+### Plugins (15 Enabled)
+
+**Official Claude Plugins:**
+- `frontend-design` - Create production-grade frontend interfaces
+- `context7` - Library documentation lookup
+- `github` - GitHub integration
+- `feature-dev` - Guided feature development
+- `code-review` - PR code review
+- `playwright` - Browser automation
+- `greptile` - Code analysis and PR management
+- `serena` - Semantic code tools
+
+**Superpowers Marketplace (`obra/superpowers-marketplace`):**
+- `superpowers` - Development methodology and workflows
+
+**WSHobson Agents (`wshobson/agents`):**
+- `javascript-typescript` - JS/TS development
+- `backend-development` - Backend patterns
+- `testing` - Test automation
+- `code-review-ai` - AI code review
+- `database-development` - Database design
+
+### Skills Reference
+
+| Skill | Command | When to Use |
+|-------|---------|-------------|
+| Brainstorming | `/brainstorming` | Before building any feature - explore requirements |
+| Writing Plans | `/writing-plans` | Create implementation plans from specs |
+| Executing Plans | `/executing-plans` | Execute plans with review checkpoints |
+| Test-Driven Dev | `/test-driven-development` | TDD workflow for new features |
+| Systematic Debug | `/systematic-debugging` | Debug any bug or test failure |
+| Code Review | `/code-review` | Review pull requests |
+| Feature Dev | `/feature-dev` | Guided feature development |
+| Frontend Design | `/frontend-design` | Create frontend interfaces |
+| Verification | `/verification-before-completion` | Verify work before claiming done |
+
+### Tool Decision Matrix
+
+| Task | Recommended Tool |
+|------|------------------|
+| Research library docs | `context7` MCP |
+| Search the web | `perplexity` MCP |
+| Create GitHub issues/PRs | `github` MCP |
+| Track project tasks | `linear` MCP |
+| Security scanning | `semgrep` MCP |
+| Navigate code symbols | `serena` MCP |
+| Challenge assumptions | `vibe-check` MCP |
+| New feature planning | `/brainstorming` skill |
+| Multi-step implementation | `/writing-plans` + `/executing-plans` |
+| Debug failures | `/systematic-debugging` skill |
+
+### Upcoming: Custom Agents
+
+Three specialized agents are planned (see `docs/plans/2025-01-19-documentation-and-agents-design.md`):
+
+1. **Lease Ingestor Agent** - Process new lease documents, extract terms, populate databases
+2. **Financial Analyst Agent** - Revenue projections, rent roll analysis, benchmarking
+3. **Risk Assessor Agent** - Co-tenancy risks, portfolio health, expiration clustering
+
 ## Windows Notes
 
 Console encoding fixed in `scripts/ingest.py` for Rich library compatibility. OpenAI embeddings truncated to 8000 tokens to avoid API limits.

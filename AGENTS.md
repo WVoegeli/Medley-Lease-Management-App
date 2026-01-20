@@ -19,6 +19,47 @@ Compatible with Claude Code, Cursor, Windsurf, Copilot, and other AI development
 - **Export & Reporting**: PDF reports, Excel workbooks, CSV exports
 - **Testing Infrastructure**: Comprehensive pytest suite for reliability
 
+## AI Tool Stack
+
+This project is configured with a comprehensive AI development stack. Use these tools appropriately.
+
+### Available MCP Servers
+
+| MCP | Use For | Example |
+|-----|---------|---------|
+| `context7` | Library documentation | "Look up ChromaDB batch insert API" |
+| `perplexity` | Web research | "Research market rent rates" |
+| `linear` | Issue tracking | "Create issue for bug" |
+| `github` | PR/repo management | "Create PR for feature" |
+| `vibe-check` | Challenge assumptions | "Vibe check before refactor" |
+| `semgrep` | Security scanning | "Scan for SQL injection" |
+| `git` | Git operations | "Show recent commits" |
+| `serena` | Code navigation | "Find all LeaseAnalytics usages" |
+
+### Available Skills
+
+| Skill | Trigger | Purpose |
+|-------|---------|---------|
+| `/brainstorming` | Before new features | Explore requirements first |
+| `/writing-plans` | After brainstorming | Create implementation plan |
+| `/executing-plans` | After plan approval | Execute with checkpoints |
+| `/systematic-debugging` | Bug investigation | 4-phase root cause analysis |
+| `/test-driven-development` | New code | Red-Green-Refactor |
+| `/verification-before-completion` | Before done | Verify everything works |
+| `/code-review` | Before merge | Review code quality |
+
+### Tool Selection Guide
+
+```
+Need current library docs? → context7
+Need web information? → perplexity
+Need to track work? → linear
+Need code understanding? → serena
+Need security check? → semgrep
+Starting new feature? → /brainstorming
+Debugging? → /systematic-debugging
+```
+
 ## 🤖 Recommended AI Agents & Plugins
 
 **For team members using Claude Code or compatible AI tools:**
@@ -322,6 +363,116 @@ Streamlit theme configuration (`.streamlit/config.toml`):
 - **Light theme** (default) - Configured in `config.toml`
 - **Dark theme** - Users can toggle in app: Click ⋮ (top right) → Settings → Theme
 - **Permanent dark mode** - Use `config_dark.toml` as reference or uncomment dark theme lines in `config.toml`
+
+## Custom Agents (Planned)
+
+Three specialized agents are being developed to enhance lease management workflows. See `docs/plans/2025-01-19-documentation-and-agents-design.md` for full design.
+
+### Agent Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Streamlit Chat UI                         │
+└─────────────────────┬───────────────────────────────────────┘
+                      │
+                      ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    Agent Router                              │
+│           Analyzes message → Routes to handler               │
+└────┬──────────────────┬──────────────────┬──────────────────┘
+     │                  │                  │
+     ▼                  ▼                  ▼
+┌─────────────┐  ┌─────────────┐  ┌─────────────┐
+│   Lease     │  │  Financial  │  │    Risk     │
+│  Ingestor   │  │   Analyst   │  │  Assessor   │
+└─────────────┘  └─────────────┘  └─────────────┘
+```
+
+### Lease Ingestor Agent
+
+**Triggers:** "Ingest this lease", "Process new document", "Add this lease"
+
+**Capabilities:**
+- Parse DOCX lease documents
+- Extract key terms (tenant, rent, sq ft, term, options)
+- Validate extracted data
+- Multi-step workflow with confirmation before database write
+- Populate ChromaDB + SQLite
+
+**Workflow:**
+```
+User: "Ingest the new Blue Bottle lease"
+Agent: Parses → Extracts → Displays summary:
+       "Found: Tenant: Blue Bottle, Rent: $45/PSF, Term: 10yr
+        Confirm before adding to database? [Yes/No]"
+User: "Yes"
+Agent: Writes to databases → "✓ Added. 387 chunks indexed."
+```
+
+### Financial Analyst Agent
+
+**Triggers:** "Analyze financials", "Revenue projection", "Rent roll analysis"
+
+**Capabilities:**
+- Quick metrics (single-turn): total rent, average PSF, occupancy
+- Full analysis (multi-step): projections, benchmarking, trends
+- Compare tenant performance
+- Generate Excel/PDF reports
+
+**Workflow:**
+```
+User: "What's the total monthly rent?"
+Agent: "$127,450/month across 14 tenants" (single-turn)
+
+User: "Run full Q1 financial analysis"
+Agent: "Analyzing 14 tenants. Include projections? [Yes/No]"
+       → Generates analysis → "Export to Excel?" → Creates report
+```
+
+### Risk Assessor Agent
+
+**Triggers:** "What are the risks?", "Portfolio health", "Co-tenancy exposure"
+
+**Capabilities:**
+- Co-tenancy clause analysis
+- Tenant concentration risk
+- Expiration clustering detection
+- Portfolio health scoring (0-100)
+- Mitigation recommendations
+
+**Workflow:**
+```
+User: "Any co-tenancy risks?"
+Agent: "⚠️ 3 tenants tied to Anchor A. 15% rent exposure."
+
+User: "Full risk assessment"
+Agent: Runs all checks → Displays risk matrix:
+       "🔴 HIGH: 2 leases expiring in 90 days
+        🟡 MEDIUM: Co-tenancy exposure
+        Health Score: 72/100
+        Generate recommendations? [Yes/No]"
+```
+
+### Agent + MCP Integration
+
+| Agent | Uses These MCPs |
+|-------|-----------------|
+| **Lease Ingestor** | `serena` (parser code), `linear` (failed ingestion tickets) |
+| **Financial Analyst** | `perplexity` (market comparables), `context7` (Pandas docs) |
+| **Risk Assessor** | `perplexity` (tenant research), `linear` (risk mitigation tasks) |
+
+### Implementation Location
+
+```
+src/agents/                    # Agent framework (planned)
+├── __init__.py
+├── base_agent.py             # Abstract base class
+├── agent_router.py           # Message routing
+├── lease_ingestor_agent.py
+├── financial_analyst_agent.py
+├── risk_assessor_agent.py
+└── prompts/                  # Agent system prompts
+```
 
 ## Windows Notes
 
