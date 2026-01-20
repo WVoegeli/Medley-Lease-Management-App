@@ -438,3 +438,346 @@ class TestAgentIntegration:
         # Agent could use context in execution
         response = result.agent.execute("context test", ctx)
         assert response is not None
+
+
+# ============== Individual Agent Tests ==============
+
+from src.agents.financial_analyst_agent import FinancialAnalystAgent
+from src.agents.risk_assessor_agent import RiskAssessorAgent
+from src.agents.lease_ingestor_agent import LeaseIngestorAgent
+
+
+class MockSQLStore:
+    """Mock SQL store for testing agents."""
+
+    def get_financial_summary(self):
+        return {
+            "total_monthly_rent": 125000.00,
+            "tenant_count": 10,
+            "average_psf": 32.50,
+            "total_sqft": 50000
+        }
+
+    def get_all_tenants(self):
+        return [
+            {"name": "Summit Coffee", "monthly_rent": 5000, "sqft": 1500},
+            {"name": "Medley Books", "monthly_rent": 4500, "sqft": 1200},
+        ]
+
+    def get_expiring_leases(self, days_ahead=365):
+        return [
+            {"tenant_name": "Summit Coffee", "expiration_date": "2025-06-30"},
+            {"tenant_name": "Medley Books", "expiration_date": "2025-12-31"},
+        ]
+
+    def get_tenant_by_name(self, name):
+        tenants = {
+            "Summit Coffee": {"name": "Summit Coffee", "monthly_rent": 5000, "sqft": 1500},
+            "Medley Books": {"name": "Medley Books", "monthly_rent": 4500, "sqft": 1200},
+        }
+        return tenants.get(name)
+
+
+class TestFinancialAnalystAgent:
+    """Tests for FinancialAnalystAgent."""
+
+    def test_agent_properties(self):
+        """Test basic agent properties."""
+        agent = FinancialAnalystAgent()
+        assert agent.name == "FinancialAnalystAgent"
+        assert "financial" in agent.description.lower()
+        assert len(agent.trigger_patterns) > 0
+
+    def test_can_handle_total_rent(self):
+        """Test handling total rent queries."""
+        agent = FinancialAnalystAgent()
+        ctx = AgentContext()
+
+        score = agent.can_handle("What's the total monthly rent?", ctx)
+        assert score > 0.5
+
+    def test_can_handle_projection(self):
+        """Test handling projection queries."""
+        agent = FinancialAnalystAgent()
+        ctx = AgentContext()
+
+        score = agent.can_handle("Run revenue projections for next year", ctx)
+        assert score > 0.5
+
+    def test_can_handle_comparison(self):
+        """Test handling comparison queries."""
+        agent = FinancialAnalystAgent()
+        ctx = AgentContext()
+
+        score = agent.can_handle("Compare Summit Coffee and Medley Books", ctx)
+        assert score > 0.3
+
+    def test_can_handle_benchmark(self):
+        """Test handling benchmark queries."""
+        agent = FinancialAnalystAgent()
+        ctx = AgentContext()
+
+        score = agent.can_handle("What are the portfolio benchmarks?", ctx)
+        assert score > 0.3
+
+    def test_can_handle_non_financial(self):
+        """Test low score for non-financial queries."""
+        agent = FinancialAnalystAgent()
+        ctx = AgentContext()
+
+        score = agent.can_handle("What is the weather today?", ctx)
+        assert score < 0.3
+
+    def test_execute_without_database(self):
+        """Test execution without database returns helpful message."""
+        agent = FinancialAnalystAgent()
+        ctx = AgentContext()
+
+        response = agent.execute("What's the total rent?", ctx)
+        assert response is not None
+        assert "database" in response.message.lower() or "configured" in response.message.lower()
+
+    def test_execute_with_database(self):
+        """Test execution with mock database."""
+        agent = FinancialAnalystAgent(sql_store=MockSQLStore())
+        ctx = AgentContext()
+
+        response = agent.execute("What's the total rent?", ctx)
+        assert response is not None
+        assert response.agent_name == "FinancialAnalystAgent"
+
+    def test_supports_guided_mode(self):
+        """Test that agent supports guided mode."""
+        agent = FinancialAnalystAgent()
+        assert agent.supports_guided_mode()
+
+
+class TestRiskAssessorAgent:
+    """Tests for RiskAssessorAgent."""
+
+    def test_agent_properties(self):
+        """Test basic agent properties."""
+        agent = RiskAssessorAgent()
+        assert agent.name == "RiskAssessorAgent"
+        assert "risk" in agent.description.lower()
+        assert len(agent.trigger_patterns) > 0
+
+    def test_can_handle_co_tenancy(self):
+        """Test handling co-tenancy queries."""
+        agent = RiskAssessorAgent()
+        ctx = AgentContext()
+
+        score = agent.can_handle("What are the co-tenancy risks?", ctx)
+        assert score > 0.5
+
+    def test_can_handle_expiration(self):
+        """Test handling expiration queries."""
+        agent = RiskAssessorAgent()
+        ctx = AgentContext()
+
+        score = agent.can_handle("Which leases are expiring soon?", ctx)
+        assert score > 0.5
+
+    def test_can_handle_concentration(self):
+        """Test handling concentration queries."""
+        agent = RiskAssessorAgent()
+        ctx = AgentContext()
+
+        score = agent.can_handle("What is our tenant concentration risk?", ctx)
+        assert score > 0.5
+
+    def test_can_handle_health_check(self):
+        """Test handling health check queries."""
+        agent = RiskAssessorAgent()
+        ctx = AgentContext()
+
+        score = agent.can_handle("Run a portfolio health check", ctx)
+        assert score > 0.4  # Health check has moderate confidence
+
+    def test_can_handle_non_risk(self):
+        """Test low score for non-risk queries."""
+        agent = RiskAssessorAgent()
+        ctx = AgentContext()
+
+        score = agent.can_handle("What is Summit Coffee's phone number?", ctx)
+        assert score < 0.3
+
+    def test_execute_without_database(self):
+        """Test execution without database returns helpful message."""
+        agent = RiskAssessorAgent()
+        ctx = AgentContext()
+
+        response = agent.execute("What are the co-tenancy risks?", ctx)
+        assert response is not None
+
+    def test_execute_with_database(self):
+        """Test execution with mock database."""
+        agent = RiskAssessorAgent(sql_store=MockSQLStore())
+        ctx = AgentContext()
+
+        response = agent.execute("Which leases are expiring?", ctx)
+        assert response is not None
+        assert response.agent_name == "RiskAssessorAgent"
+
+    def test_supports_guided_mode(self):
+        """Test that agent supports guided mode."""
+        agent = RiskAssessorAgent()
+        assert agent.supports_guided_mode()
+
+
+class TestLeaseIngestorAgent:
+    """Tests for LeaseIngestorAgent."""
+
+    def test_agent_properties(self):
+        """Test basic agent properties."""
+        agent = LeaseIngestorAgent()
+        assert agent.name == "LeaseIngestorAgent"
+        assert "lease" in agent.description.lower() or "ingest" in agent.description.lower()
+        assert len(agent.trigger_patterns) > 0
+
+    def test_can_handle_ingest(self):
+        """Test handling ingest queries."""
+        agent = LeaseIngestorAgent()
+        ctx = AgentContext()
+
+        score = agent.can_handle("Ingest a new lease document", ctx)
+        assert score > 0.5
+
+    def test_can_handle_process(self):
+        """Test handling process queries."""
+        agent = LeaseIngestorAgent()
+        ctx = AgentContext()
+
+        score = agent.can_handle("Process this new lease", ctx)
+        assert score > 0.5
+
+    def test_can_handle_add_document(self):
+        """Test handling add document queries."""
+        agent = LeaseIngestorAgent()
+        ctx = AgentContext()
+
+        # "add document" is handled but needs specific lease keywords for high confidence
+        score = agent.can_handle("Add new lease document to the database", ctx)
+        assert score > 0.3
+
+    def test_can_handle_extract(self):
+        """Test handling extraction queries."""
+        agent = LeaseIngestorAgent()
+        ctx = AgentContext()
+
+        # Extraction needs strong ingest context
+        score = agent.can_handle("Process and extract lease terms from this new document", ctx)
+        assert score > 0.3
+
+    def test_can_handle_non_ingest(self):
+        """Test low score for non-ingest queries."""
+        agent = LeaseIngestorAgent()
+        ctx = AgentContext()
+
+        score = agent.can_handle("What is the current rent?", ctx)
+        assert score < 0.3
+
+    def test_execute_returns_response(self):
+        """Test execution returns a valid response."""
+        agent = LeaseIngestorAgent()
+        ctx = AgentContext()
+
+        response = agent.execute("Ingest a new lease", ctx)
+        assert response is not None
+        assert response.agent_name == "LeaseIngestorAgent"
+
+    def test_supports_guided_mode(self):
+        """Test that agent supports guided mode."""
+        agent = LeaseIngestorAgent()
+        assert agent.supports_guided_mode()
+
+
+# ============== Agent Factory Tests ==============
+
+class TestAgentFactory:
+    """Tests for agent factory function."""
+
+    def test_create_default_agents(self):
+        """Test creating default agents."""
+        from src.agents import create_default_agents
+
+        agents = create_default_agents()
+        assert len(agents) == 3
+
+        agent_names = [a.name for a in agents]
+        assert "FinancialAnalystAgent" in agent_names
+        assert "RiskAssessorAgent" in agent_names
+        assert "LeaseIngestorAgent" in agent_names
+
+    def test_create_agents_with_resources(self):
+        """Test creating agents with shared resources."""
+        from src.agents import create_default_agents
+
+        mock_store = MockSQLStore()
+        agents = create_default_agents(sql_store=mock_store)
+
+        # All agents should have the shared resource
+        for agent in agents:
+            assert agent.sql_store is mock_store
+
+    def test_router_with_default_agents(self):
+        """Test router with default agents."""
+        from src.agents import create_default_agents, AgentRouter
+
+        agents = create_default_agents()
+        # Use lower threshold to allow routing on moderate confidence
+        router = AgentRouter(agents, confidence_threshold=0.5)
+
+        ctx = AgentContext()
+
+        # Test routing to each agent type
+        result1 = router.route("What is the total rent?", ctx)
+        assert result1.agent.name == "FinancialAnalystAgent"
+
+        result2 = router.route("What are the co-tenancy risks?", ctx)
+        assert result2.agent.name == "RiskAssessorAgent"
+
+        result3 = router.route("Process and ingest this new lease document", ctx)
+        assert result3.agent.name == "LeaseIngestorAgent"
+
+
+# ============== Prompt Tests ==============
+
+class TestAgentPrompts:
+    """Tests for agent prompts."""
+
+    def test_prompts_import(self):
+        """Test that all prompts can be imported."""
+        from src.agents.prompts import (
+            FINANCIAL_ANALYST_PROMPT,
+            RISK_ASSESSOR_PROMPT,
+            LEASE_INGESTOR_PROMPT
+        )
+
+        assert len(FINANCIAL_ANALYST_PROMPT) > 100
+        assert len(RISK_ASSESSOR_PROMPT) > 100
+        assert len(LEASE_INGESTOR_PROMPT) > 100
+
+    def test_financial_prompt_content(self):
+        """Test financial prompt contains key elements."""
+        from src.agents.prompts import FINANCIAL_ANALYST_PROMPT
+
+        prompt_lower = FINANCIAL_ANALYST_PROMPT.lower()
+        assert "financial" in prompt_lower
+        assert "revenue" in prompt_lower or "rent" in prompt_lower
+
+    def test_risk_prompt_content(self):
+        """Test risk prompt contains key elements."""
+        from src.agents.prompts import RISK_ASSESSOR_PROMPT
+
+        prompt_lower = RISK_ASSESSOR_PROMPT.lower()
+        assert "risk" in prompt_lower
+        assert "co-tenancy" in prompt_lower or "expiration" in prompt_lower
+
+    def test_ingestor_prompt_content(self):
+        """Test ingestor prompt contains key elements."""
+        from src.agents.prompts import LEASE_INGESTOR_PROMPT
+
+        prompt_lower = LEASE_INGESTOR_PROMPT.lower()
+        assert "lease" in prompt_lower
+        assert "extract" in prompt_lower
